@@ -3,6 +3,7 @@ import Menu from "./components/shared/Menu"
 import Footer from "./components/shared/Footer"
 import Home from "./components/views/Home"
 import DetalleDeProducto from "./components/views/Producto/DetalleDeProducto"
+import Login from "./components/views/Login"
 import './App.css'
 
 function App() {
