@@ -4,6 +4,8 @@ import Footer from "./components/shared/Footer"
 import Home from "./components/views/Home"
 import DetalleDeProducto from "./components/views/Producto/DetalleDeProducto"
 import Login from "./components/views/Login"
+import Administrador from "./components/views/Administrador"
+
 import './App.css'
 
 function App() {
