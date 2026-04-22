@@ -8,6 +8,7 @@ import Administrador from "./components/views/Administrador"
 import FormularioProducto from "./components/views/Producto/FormularioProducto"
 import Error404 from "./components/views/Error404"
 import { useEffect, useState } from "react"
+import ProtectorAdmin from "./components/routes/ProtectorAdmin"
 import './App.css'
 
 function App() {
