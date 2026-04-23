@@ -30,6 +30,8 @@ const Login = ({ setUsuarioLogueado}) => {
       icon: "success"
     });
     navegacion("/administrador");
+  } else {
+    
   }
 
 }
