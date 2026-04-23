@@ -11,6 +11,7 @@ const Login = ({ setUsuarioLogueado}) => {
   const {
     register,
     handelerSubmit,
+    formState: { errors },
   }
 }
 
