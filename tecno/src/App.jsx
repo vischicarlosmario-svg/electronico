@@ -30,7 +30,10 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/detalle" element={<DetalleDeProducto/>}/>
             <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
-            <Route path="/Adiministrador" element={<ProtectorAdmin usuarioLogeado={usuarioLogeado}/>}/>
+            <Route path="/Adiministrador" element={<ProtectorAdmin usuarioLogeado={usuarioLogeado}/>}>
+              <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>}/>
+              <Route />
+            </Route>
           </Routes>
         </main>
       </BrowserRouter>
