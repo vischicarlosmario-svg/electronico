@@ -46,7 +46,7 @@ return (
     <Row xs={1} md={2}>
       <Col>
         <Card.body>
-          
+          <h1 className="text-center mb-4">Iniciar secion</h1>
         </Card.body>
       </Col>
     </Row>
