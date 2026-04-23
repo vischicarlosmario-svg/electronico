@@ -21,6 +21,9 @@ const Login = ({ setUsuarioLogueado}) => {
       data.email === import.meta.env.VITE_API_EMAIL &&
       data.pasword === import.meta.env.VITE_API_PASSWORD
     )
+  } {
+    console.log('Aqui logueo al usuario');
+    
   }
 
 }
