@@ -50,7 +50,9 @@ return (
             <Form onSubmit={habdSubmit(onSubmit)}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email:</Form.Label>
-                <Form.Control/>
+                <Form.Control
+                type="email"
+                />
               </Form.Group>
 
             </Form>
