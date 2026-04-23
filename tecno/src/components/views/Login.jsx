@@ -25,7 +25,8 @@ const Login = ({ setUsuarioLogueado}) => {
     console.log('Aqui logueo al usuario');
     setUsuarioLogueado(true);
     Swal.fire({
-      title: "Bienvenido Sr Administrador"
+      title: "Bienvenido Sr Administrador",
+      text: "Iniciando sesion correctamente",
     }
 
     )
