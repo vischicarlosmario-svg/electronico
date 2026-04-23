@@ -33,6 +33,7 @@ const Login = ({ setUsuarioLogueado}) => {
   } else {
     Swal.fire({
       title: "Ocurrio un error, intente nuevamente",
+      text: "Credenciales incorrectas",
     })
   }
 
