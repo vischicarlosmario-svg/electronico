@@ -42,6 +42,9 @@ const Login = ({ setUsuarioLogueado}) => {
 
 return (
   <>
+  <Card>
+    
+  </Card>
   </>
 )
 
