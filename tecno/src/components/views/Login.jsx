@@ -52,6 +52,7 @@ return (
                 <Form.Label>Email:</Form.Label>
                 <Form.Control
                 type="email"
+                placeholder="Ej: juanperez@mail.com"
                 />
               </Form.Group>
 
