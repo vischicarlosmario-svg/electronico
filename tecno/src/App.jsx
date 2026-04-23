@@ -26,7 +26,9 @@ function App() {
       <BrowserRouter>
         <Menu>  usuarioLogueado={usuarioLogeado} setUsuarioLoguado={setUsuarioLogueado}</Menu>
         <main>
-          
+          <Routes>
+
+          </Routes>
         </main>
       </BrowserRouter>
     </>
