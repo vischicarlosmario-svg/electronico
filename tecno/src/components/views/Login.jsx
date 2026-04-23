@@ -14,7 +14,7 @@ const Login = ({ setUsuarioLogueado}) => {
     formState: { errors },
   } = useForm();
 
-  const navigacio = useNavigate()
+  const navigacion = useNavigate()
 
 }
 
