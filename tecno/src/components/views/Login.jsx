@@ -28,9 +28,8 @@ const Login = ({ setUsuarioLogueado}) => {
       title: "Bienvenido Sr Administrador",
       text: "Iniciando sesion correctamente",
       icon: "success"
-    }
-
-    )
+    });
+    navegacion("/administrador");
   }
 
 }
