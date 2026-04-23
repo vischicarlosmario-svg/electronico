@@ -27,6 +27,7 @@ const Login = ({ setUsuarioLogueado}) => {
     Swal.fire({
       title: "Bienvenido Sr Administrador",
       text: "Iniciando sesion correctamente",
+      icon: "success"
     }
 
     )
