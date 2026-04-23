@@ -62,7 +62,7 @@ return (
                   })}
                 />
                 <Form.text className="text-danger">
-
+                  {errors.mail?.message}
                 </Form.text>
               </Form.Group>
 
