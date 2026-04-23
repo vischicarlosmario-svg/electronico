@@ -53,6 +53,10 @@ return (
                 <Form.Control
                 type="email"
                 placeholder="Ej: juanperez@mail.com"
+                {...register("email,{
+                }")
+
+                }
                 />
               </Form.Group>
 
