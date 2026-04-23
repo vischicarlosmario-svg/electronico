@@ -12,7 +12,7 @@ const Login = ({ setUsuarioLogueado}) => {
     register,
     handelerSubmit,
     formState: { errors },
-  }
+  } = useForm();
 }
 
 
