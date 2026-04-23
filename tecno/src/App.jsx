@@ -38,6 +38,7 @@ function App() {
             <Route path="*" element={<Error404></Error404>}/>
           </Routes>
         </main>
+        <Footer></Footer>
       </BrowserRouter>
     </>
   )
