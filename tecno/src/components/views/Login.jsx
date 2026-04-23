@@ -55,6 +55,9 @@ return (
                 placeholder="Ej: juanperez@mail.com"
                 {...register("email,{
                 required: "El mail es un dato obligatorio",
+                pattern: {
+                  
+                }
                 }")
 
                 }
