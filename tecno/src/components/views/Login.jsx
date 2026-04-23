@@ -31,7 +31,9 @@ const Login = ({ setUsuarioLogueado}) => {
     });
     navegacion("/administrador");
   } else {
-    
+    Swal.fire({
+      title: "Ocurrio un error, intente nuevamente",
+    })
   }
 
 }
