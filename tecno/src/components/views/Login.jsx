@@ -48,7 +48,10 @@ return (
         <Card.body>
           <h1 className="text-center mb-4">Iniciar secion</h1>
           <Form onSubmit={habdSubmit(onSubmit)}>
-            
+            <Form.Group>
+              
+            </Form.Group>
+
           </Form>
         </Card.body>
       </Col>
