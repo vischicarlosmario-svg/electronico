@@ -16,6 +16,10 @@ function App() {
   const [usuarioLogeado, setUsuarioLogueado] = useState(sesionUsuario);
   const [productor, setProductos] = useState([])
 
+  useEffect(()=> {
+    sessionStorage.setItem('usuarioKey', JSON.stringify(usuarioLogeado))
+  },[usuarioLogueado]
+  )
 
   return (
     <>
