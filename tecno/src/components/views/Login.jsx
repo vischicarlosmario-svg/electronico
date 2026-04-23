@@ -42,8 +42,8 @@ const Login = ({ setUsuarioLogueado}) => {
 
 return (
   <>
-  <Card>
-    
+  <Card className="shadow p-3 mb-5 bg-body rounded card-login">
+
   </Card>
   </>
 )
