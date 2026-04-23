@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route } from "react-router"
+import { BrowserRouter, Routes, Route } from "react-router"
 import Menu from "./components/shared/Menu"
 import Footer from "./components/shared/Footer"
 import Home from "./components/views/Home"
@@ -12,18 +12,20 @@ import ProtectorAdmin from "./components/routes/ProtectorAdmin"
 import './App.css'
 
 function App() {
-  const sesionUsuario = JSON.parse (sessionStorage.getItem("usuarioKey")) || false;
+  const sesionUsuario = JSON.parse(sessionStorage.getItem("usuarioKey")) || false;
   const [usuarioLogeado, setUsuarioLogueado] = useState(sesionUsuario);
   const [productor, setProductos] = useState([])
 
-  useEffect(()=> {
+  useEffect(() => {
     sessionStorage.setItem('usuarioKey', JSON.stringify(usuarioLogeado))
-  },[usuarioLogueado]
+  }, [usuarioLogueado]
   )
 
   return (
     <>
-    
+      <BrowserRouter>
+
+      </BrowserRouter>
     </>
   )
 }
