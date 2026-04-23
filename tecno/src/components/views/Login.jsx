@@ -27,14 +27,15 @@ const Login = ({ setUsuarioLogueado}) => {
     Swal.fire({
       title: "Bienvenido Sr Administrador",
       text: "Iniciando sesion correctamente",
-      icon: "success"
+      icon: "success",
     });
     navegacion("/administrador");
   } else {
     Swal.fire({
       title: "Ocurrio un error, intente nuevamente",
       text: "Credenciales incorrectas",
-    })
+      icon: "error",
+    });
   }
 
 }
