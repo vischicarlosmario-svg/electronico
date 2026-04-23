@@ -5,6 +5,11 @@ import  Swal from "sweetalert2";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/Ai';
 import { useState } from "react"
 
+const Login = ({ setUsuarioLogueado}) => {
+
+  
+}
+
 
 
 
