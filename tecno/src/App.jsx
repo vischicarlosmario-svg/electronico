@@ -32,7 +32,7 @@ function App() {
             <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
             <Route path="/Adiministrador" element={<ProtectorAdmin usuarioLogeado={usuarioLogeado}/>}>
               <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>}/>
-              <Route />
+              <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>
             </Route>
           </Routes>
         </main>
