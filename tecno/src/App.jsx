@@ -12,6 +12,9 @@ import ProtectorAdmin from "./components/routes/ProtectorAdmin"
 import './App.css'
 
 function App() {
+  const sesionUsuario = JSON.parse (sessionStorage.getItem("usuarioKey")) || false;
+  
+
 
   return (
     <>
