@@ -49,6 +49,7 @@ return (
           <h1 className="text-center mb-4">Iniciar secion</h1>
           <Form onSubmit={habdSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email:</Form.Label>
 
             </Form.Group>
 
