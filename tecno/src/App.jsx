@@ -35,6 +35,7 @@ function App() {
               <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>
               <Route path="editar/:id" element={<FormularioProducto titulo="Editar Producto"></FormularioProducto>}/>
             </Route>
+            <Route path="*" element={<Error404></Error404>}/>
           </Routes>
         </main>
       </BrowserRouter>
