@@ -48,8 +48,8 @@ return (
         <Card.body>
           <h1 className="text-center mb-4">Iniciar secion</h1>
           <Form onSubmit={habdSubmit(onSubmit)}>
-            <Form.Group>
-              
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+
             </Form.Group>
 
           </Form>
