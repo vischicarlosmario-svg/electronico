@@ -13,6 +13,7 @@ import './App.css'
 
 function App() {
   const sesionUsuario = JSON.parse (sessionStorage.getItem("usuarioKey")) || false;
+  const [usuarioLogeado, setUsuarioLogueado] = useState(sesionUsuario);
   
 
 
