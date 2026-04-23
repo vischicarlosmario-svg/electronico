@@ -30,7 +30,7 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/detalle" element={<DetalleDeProducto/>}/>
             <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
-
+            <Route path="/Adiministrador" element={<ProtectorAdmin usuarioLogeado={usuarioLogeado}/>}/>
           </Routes>
         </main>
       </BrowserRouter>
