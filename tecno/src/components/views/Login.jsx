@@ -51,17 +51,15 @@ return (
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email:</Form.Label>
                 <Form.Control
-                type="email"
-                placeholder="Ej: juanperez@mail.com"
-                {...register("email,{
-                required: "El mail es un dato obligatorio",
-                pattern: {
-                  value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-                  
-                }
-                }")
-
-                }
+                  type="email"
+                  placeholder="Ej: juanperez@mail.com"
+                  {...register("email", {
+                    required: "El mail es un dato obligatorio",
+                    pattern: {
+                      value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                      message: "El e-mail debe ser un correo valido, por ej. juanperez@gmail"
+                    }
+                  })}
                 />
               </Form.Group>
 
