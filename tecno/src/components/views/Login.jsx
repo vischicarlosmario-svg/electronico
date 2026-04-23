@@ -23,7 +23,7 @@ const Login = ({ setUsuarioLogueado}) => {
     )
   } {
     console.log('Aqui logueo al usuario');
-    
+    setUsuarioLogueado(true);
   }
 
 }
