@@ -9,6 +9,7 @@ const Login = ({ setUsuarioLogueado}) => {
   const [ showPassword, setShowPassword ] = useState(false);
   const handlePassword = () => { setShowPassword(!showPassword)}
   const {
+    register,
   }
 }
 
