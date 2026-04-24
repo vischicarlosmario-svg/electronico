@@ -66,6 +66,7 @@ return (
                 </Form.text>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPasword">
+                <Form.Label>Contraseña:</Form.Label>
 
               </Form.Group>
 
