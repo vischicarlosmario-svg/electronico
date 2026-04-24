@@ -79,7 +79,9 @@ return (
                   })}
                 />
                 <Button className="mt-3">
-
+                  {showPassword === false ?(
+                    <AiFillEyeInvisible onClick={handlePassword}/>
+                  )}
                 </Button>
 
               </Form.Group>
