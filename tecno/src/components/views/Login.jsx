@@ -90,7 +90,7 @@ return (
                 </Form.Text>
               </Form.Group>
               <Button variant="warning" type="submit">
-                  Iniciar secion.
+                  Iniciar sesion.
               </Button>
             </Form>
           </Card.body>
