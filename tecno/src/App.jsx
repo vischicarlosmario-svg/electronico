@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Menu>  usuarioLogueado={usuarioLogeado} setUsuarioLoguado={setUsuarioLogueado}</Menu>
+        <Menu usuarioLogueado={usuarioLogeado} setUsuarioLoguado={setUsuarioLogueado}></Menu>
         <main>
           <Routes>
             <Route path="/" element={<Home/>}/>
