@@ -72,6 +72,9 @@ return (
                   placeholder="Ingresa la contraseña correspondiente"
                   {...register("password", {
                     required: "La contraseña es un delito obligatorio",
+                    pattern: {
+                      
+                    }
                   }
 
                   )
