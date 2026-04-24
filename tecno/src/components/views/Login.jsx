@@ -86,7 +86,7 @@ return (
                   }
                 </Button>
                 <Form.Text className="text-danger">
-                  
+                  {errors.pasword?.message}
                 </Form.Text>
 
               </Form.Group>
