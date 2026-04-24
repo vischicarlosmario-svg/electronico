@@ -76,12 +76,11 @@ return (
                       value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
                       message: "La contraseña debe tener entre y 16 caracteres"
                     }
-                  }
-
-                  )
-
-                  }
+                  })}
                 />
+                <Button>
+                  
+                </Button>
 
               </Form.Group>
 
