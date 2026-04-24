@@ -21,8 +21,8 @@ const Login = ({ setUsuarioLogueado }) => {
       data.email === import.meta.env.VITE_API_EMAIL &&
       data.pasword === import.meta.env.VITE_API_PASSWORD
     )
-  } {
-      console.log('Aqui logueo al usuario');
+  } { 
+      console.log('Aqui logueo al usuario')
   setUsuarioLogueado(true);
   Swal.fire({
     title: "Bienvenido Sr Administrador",
@@ -35,9 +35,8 @@ const Login = ({ setUsuarioLogueado }) => {
     title: "Ocurrio un error, intente nuevamente",
     text: "Credenciales incorrectas",
     icon: "error",
-  });
+  })
   }
-
 }
 
 return (
@@ -68,7 +67,7 @@ return (
               <Form.Group className="mb-3" controlId="formBasicPasword">
                 <Form.Label>Contraseña:</Form.Label>
                 <Form.Control
-                  type={showPassword === false? 'password':'text'}
+                  type={showPassword === false ? 'password' : 'text'}
                   placeholder="Ingresa la contraseña correspondiente"
                   {...register("password", {
                     required: "La contraseña es un delito obligatorio",
@@ -79,10 +78,10 @@ return (
                   })}
                 />
                 <Button className="mt-3">
-                  {showPassword === false ?(
-                    <AiFillEyeInvisible onClick={handlePassword}/>
-                  ):(
-                    <AiFillEye onClick={handlePassword}/>)
+                  {showPassword === false ? (
+                    <AiFillEyeInvisible onClick={handlePassword} />
+                  ) : (
+                    <AiFillEye onClick={handlePassword} />)
                   }
                 </Button>
                 <Form.Text className="text-danger">
@@ -90,7 +89,7 @@ return (
                 </Form.Text>
               </Form.Group>
               <Button variant="warning" type="submit">
-                  Iniciar sesion.
+                Iniciar sesion.
               </Button>
             </Form>
           </Card.body>
