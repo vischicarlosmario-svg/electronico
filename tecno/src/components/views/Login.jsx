@@ -69,6 +69,7 @@ return (
                 <Form.Label>Contraseña:</Form.Label>
                 <Form.Control
                   type={showPassword === false? 'password':'text'}
+                  placeholder="Ingresa la contraseña correspondiente"
                 />
 
               </Form.Group>
