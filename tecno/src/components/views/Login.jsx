@@ -70,6 +70,11 @@ return (
                 <Form.Control
                   type={showPassword === false? 'password':'text'}
                   placeholder="Ingresa la contraseña correspondiente"
+                  {..register(
+                    
+                  )
+
+                  }
                 />
 
               </Form.Group>
