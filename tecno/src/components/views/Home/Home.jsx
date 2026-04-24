@@ -12,6 +12,8 @@ const Home = () => {
 
   const listaDeJuegos = []
 
+  const juegosPopulares = []
+
   return (
     <>
       
