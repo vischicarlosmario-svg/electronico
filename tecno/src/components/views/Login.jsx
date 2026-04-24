@@ -97,7 +97,7 @@ const Login = ({ setUsuarioLogueado }) => {
         </Row>
       </Card>
     </>
-  )
+  
 }
 
   export default Login
