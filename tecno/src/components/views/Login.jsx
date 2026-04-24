@@ -70,8 +70,10 @@ return (
                 <Form.Control
                   type={showPassword === false? 'password':'text'}
                   placeholder="Ingresa la contraseña correspondiente"
-                  {..register(
-                    
+                  {...register("password", {
+                    required: "La contraseña es un delito obligatorio",
+                  }
+
                   )
 
                   }
