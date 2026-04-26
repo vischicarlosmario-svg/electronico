@@ -8,10 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Home = () => {
 
-  const listaDeJuegos= []
-
-  const juegosPopulares = []
-
   }
 
   return (

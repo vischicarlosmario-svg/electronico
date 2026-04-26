@@ -1,22 +1,27 @@
-import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import CarouselItem from 'react-bootstrap/esm/CarouselItem';
+import {cyberpunk, expedition33, residentEvilRequiem } from 'assets';
 
 const Carrousel = () => {
   return (
+    <main>
+      interval={3000},
+      fade
+      controls={true}
     <div className="carrusel">
-      <Carousel>
+      <Carousel fade interval={3000} controls={true} indicators={true}>
         <Carousel.Item>
-          <CarouselImage text="First slide">"imagen"</CarouselImage>
+          <CarouselImage alt="Cyberpunk">{cyberpunk}</CarouselImage>
         </Carousel.Item>
         <Carousel.Item>
-          <CarouselImage text="Second slide">"imagen"</CarouselImage>
+          <CarouselImage alt="Expedition 33">{expedition33}</CarouselImage>
         </Carousel.Item>
         <Carousel.Item>
-          <CarouselImage text="Third slide">"imagen"</CarouselImage>
+          <CarouselImage alt="Resident Evil Requiem">{residentEvilRequiem}</CarouselImage>
         </Carousel.Item>
       </Carousel>
     </div>
+    </main>
   )
 }
 

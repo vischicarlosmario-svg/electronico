@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const JuegosPopulares = () => {
   return (
+    <>
     <div className='juegosPopulares'>
         <div className='juegosTitulo'>
             <h2>Juegos populares</h2>
@@ -14,6 +15,7 @@ const JuegosPopulares = () => {
         </div>
       
     </div>
+    </>
   )
 }
 
