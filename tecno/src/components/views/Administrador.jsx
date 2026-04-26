@@ -20,6 +20,7 @@ const Administrador = ({setProductos, productos}) => {
             <i className="bi bi-file-earmark-plus"></i>
           </Link>
         </div>
+        <hr/>
 
       </div>
     </section>
