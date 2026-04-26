@@ -21,8 +21,8 @@ const Administrador = ({setProductos, productos}) => {
           </Link>
         </div>
         <hr/>
-        <Table>
-          
+        <Table responsive striped bordered hover variant="dark">
+
         </Table>
 
       </div>
