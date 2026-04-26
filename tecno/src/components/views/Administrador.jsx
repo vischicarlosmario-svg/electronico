@@ -5,7 +5,7 @@ import productotosPrueba from "../../data/productosPrueba"
 import { listaProductos } from "../../helpers/queries"
 import Swal from "sweetalert2"
 
-const Administrador = ({setProductos, productos}) => {
+const Administrador = ({ setProductos, productos }) => {
 
   const cargarProductosPrueba = () => {
     setProductos(productosPrueba)
@@ -20,7 +20,7 @@ const Administrador = ({setProductos, productos}) => {
             <i className="bi bi-file-earmark-plus"></i>
           </Link>
         </div>
-        <hr/>
+        <hr />
         <Table responsive striped bordered hover variant="dark">
           <thead>
             <tr className="text-center">
@@ -32,14 +32,12 @@ const Administrador = ({setProductos, productos}) => {
               <th>Opciones</th>
             </tr>
           </thead>
+          <tbody>
+            {
+              productos.map((itemProducto, indice) => <ItemProducto itemProducto={itemProducto} key={itemProducto.id} fila={indice + 1} setProductos={setProductos}></ItemProducto>)
+            }
+          </tbody>
         </Table>
-        <tbody>
-          {
-            productos.map((itemProducto, indice) => <ItemProducto itemProducto={itemProducto} key={itemProducto.id}  fila={indice + 1} setProductos={setProductos}></ItemProducto>)
-          }
-          
-        </tbody>
-
       </div>
     </section>
   )
