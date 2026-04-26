@@ -17,7 +17,7 @@ const Administrador = ({setProductos, productos}) => {
         <h1 className="display-4">Productos disponibles</h1>
         <div>
           <Link className="btn btn-primary me-2" to="./crear">
-            <i></i>
+            <i className="bi bi-file-earmark-plus"></i>
           </Link>
         </div>
 
