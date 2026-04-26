@@ -4,7 +4,18 @@ import ItemProducto from "./Producto/ItemProducto"
 import productotosPrueba from "../../data/productosPrueba"
 import { listaProductos } from "../../helpers/queries"
 import Swal from "sweetalert2"
-const Administrador = () => {
+
+const Administrador = ({setProductos, productos}) => {
+
+  const cargarProductosPrueba = () => {
+    setProductos(productosPrueba)
+  }
+
+
+
+
+
+
   return (
     <div>
       
