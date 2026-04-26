@@ -5,9 +5,24 @@ import productossPrueba from "../../../data/productosPrueba"
 
 const Novedades = () => {
   return (
-    <div>
-      
+    <>
+        <div className="novedades">
+        <div className="juegosTitulo">
+            <h2>Juegos populares</h2>
+            <div className="row">
+                {productos.slice(7,14).map((juego) => 
+                <div className="col-lg mb-4"key={juego.id}>
+                  <CardJuego
+                    titulo={juego.nombreProducto}
+                    precio={juego.precio}
+                    imagen={juego.imagen}
+                  />
+                </div>
+                )}
+            </div>
+        </div>
     </div>
+    </>
   )
 }
 
