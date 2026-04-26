@@ -14,6 +14,7 @@ const Administrador = ({setProductos, productos}) => {
   return (
     <section className="container">
       <div className="d-flex justify-content-between alig-item-center mt-5">
+        <h1>Productos disponibles</h1>
 
       </div>
     </section>
