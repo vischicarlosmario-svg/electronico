@@ -21,6 +21,9 @@ const Administrador = ({setProductos, productos}) => {
           </Link>
         </div>
         <hr/>
+        <Table>
+          
+        </Table>
 
       </div>
     </section>
