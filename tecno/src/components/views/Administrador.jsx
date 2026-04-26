@@ -11,15 +11,10 @@ const Administrador = ({setProductos, productos}) => {
     setProductos(productosPrueba)
   }
 
-
-
-
-
-
   return (
-    <div>
+    <section>
       
-    </div>
+    </section>
   )
 }
 
