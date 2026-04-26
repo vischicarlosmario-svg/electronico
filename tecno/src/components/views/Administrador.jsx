@@ -33,6 +33,9 @@ const Administrador = ({setProductos, productos}) => {
             </tr>
           </thead>
         </Table>
+        <tbody>
+          
+        </tbody>
 
       </div>
     </section>
