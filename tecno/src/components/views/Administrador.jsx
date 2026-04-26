@@ -11,9 +11,6 @@ const Administrador = ({setProductos, productos}) => {
     setProductos(productosPrueba)
   }
 
-  const obtenerProductos = async () => {
-    const respuesta = await listaProductos();
-  }
 
 
 
