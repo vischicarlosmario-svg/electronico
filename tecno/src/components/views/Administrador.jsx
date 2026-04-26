@@ -13,7 +13,9 @@ const Administrador = ({setProductos, productos}) => {
 
   return (
     <section className="container">
-      
+      <div>
+        
+      </div>
     </section>
   )
 }
