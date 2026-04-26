@@ -11,13 +11,13 @@ const Carrousel = () => {
     <div className="carrusel">
       <Carousel fade interval={3000} controls={true} indicators={true}>
         <Carousel.Item>
-          <CarouselImage alt="Cyberpunk">{cyberpunk}</CarouselImage>
+          <CarouselImage className="d-block w100" alt="Cyberpunk">{cyberpunk}</CarouselImage>
         </Carousel.Item>
         <Carousel.Item>
-          <CarouselImage alt="Expedition 33">{expedition33}</CarouselImage>
+          <CarouselImage className="d-block w100" alt="Expedition 33">{expedition33}</CarouselImage>
         </Carousel.Item>
         <Carousel.Item>
-          <CarouselImage alt="Resident Evil Requiem">{residentEvilRequiem}</CarouselImage>
+          <CarouselImage className="d-block w100" alt="Resident Evil Requiem">{residentEvilRequiem}</CarouselImage>
         </Carousel.Item>
       </Carousel>
     </div>
