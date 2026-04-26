@@ -13,8 +13,8 @@ const Administrador = ({setProductos, productos}) => {
 
   return (
     <section className="container">
-      <div>
-        
+      <div className="d-flex justify-content-between alig-item-center mt-5">
+
       </div>
     </section>
   )
