@@ -1,6 +1,6 @@
 import card from bootstrap
 
-const CardJuego = ({titulo, precio, imagen}) => {
+const CardJuego = ({nombreProducto, precio, imagen}) => {
   return (
     <>
       <div className="card h-100"> 

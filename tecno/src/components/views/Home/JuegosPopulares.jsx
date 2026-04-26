@@ -9,8 +9,16 @@ const JuegosPopulares = () => {
     <div className='juegosPopulares'>
         <div className='juegosTitulo'>
             <h2>Juegos populares</h2>
-            <div>
-                
+            <div className="row">
+                {productos.map((juego) => 
+                <div className="col-lg mb-4">
+                  <CardJuego>
+                    titulo={juego.nombreProducto}
+                    precio={juego.precio}
+                    imagen={juego.imagen}
+                  </CardJuego>
+                </div>
+                )}
             </div>
 
         </div>
