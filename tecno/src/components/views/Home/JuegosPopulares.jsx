@@ -6,8 +6,8 @@ import productossPrueba from "../../../data/productosPrueba"
 const JuegosPopulares = () => {
   return (
     <>
-    <div className='juegosPopulares'>
-        <div className='juegosTitulo'>
+    <div className="juegosPopulares">
+        <div className="juegosTitulo">
             <h2>Juegos populares</h2>
             <div className="row">
                 {productos.slice(0,6).map((juego) => 

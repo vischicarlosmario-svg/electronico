@@ -1,4 +1,3 @@
-import Card from "react-bootstrap"
 
 const CardJuego = ({nombreProducto, precio, imagen}) => {
   return (
