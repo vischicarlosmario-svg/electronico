@@ -11,15 +11,24 @@ const Administrador = ({setProductos, productos}) => {
     setProductos(productosPrueba)
   }
 
-
-
-
-
-
   return (
-    <div>
-      
-    </div>
+    <section className="container">
+      <div className="d-flex justify-content-between alig-item-center mt-5">
+        <h1 className="display-4">Productos disponibles</h1>
+        <div>
+          <Link className="btn btn-primary me-2" to="./crear">
+            <i className="bi bi-file-earmark-plus"></i>
+          </Link>
+        </div>
+        <hr/>
+        <Table responsive striped bordered hover variant="dark">
+          <thead>
+            
+          </thead>
+        </Table>
+
+      </div>
+    </section>
   )
 }
 
