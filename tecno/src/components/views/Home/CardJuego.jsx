@@ -8,6 +8,7 @@ const CardJuego = ({titulo, precio, imagen}) => {
         <div className="card-body">
             <h6 className="card-title">titulo</h6>
             <p className="card-text">precio</p>
+            
         </div>
       </div>
     </>
