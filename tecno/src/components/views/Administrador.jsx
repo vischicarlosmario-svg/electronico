@@ -12,7 +12,7 @@ const Administrador = ({setProductos, productos}) => {
   }
 
   const obtenerProductos = async () => {
-    
+    const respuesta = await listaProductos();
   }
 
 
