@@ -4,11 +4,10 @@ const CardJuego = ({titulo, precio, imagen}) => {
   return (
     <>
       <div className="card h-100"> 
-        <img src="" alt="" />
+        <img src={juego.imagen} alt="" />
         <div className="card-body">
-            <h6 className="card-title">titulo</h6>
-            <p className="card-text">precio</p>
-            
+            <h6 className="card-title">{juego.nombreProducto}</h6>
+            <p className="card-text">{juego.precio}</p>
         </div>
       </div>
     </>
