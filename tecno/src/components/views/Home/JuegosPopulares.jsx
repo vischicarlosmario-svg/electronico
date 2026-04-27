@@ -9,8 +9,8 @@ const JuegosPopulares = () => {
         <div className="juegosTitulo">
             <h2>Juegos populares</h2>
             <div className="row">
-                {productos.slice(0,6).map((juego) => 
-                <div className="col-lg mb-4"key={juego.id}>
+                {ProductosPrueba.slice(0,6).map((juego) => 
+                <div className="col-lg-4 mb-4"key={juego.id}>
                   <CardJuego
                     titulo={juego.nombreProducto}
                     precio={juego.precio}
