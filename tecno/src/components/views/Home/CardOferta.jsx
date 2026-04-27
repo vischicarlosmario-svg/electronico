@@ -8,11 +8,11 @@ const CardOferta = ({nombreProducto, imagen, descuente, precio, precioNuevo}) =>
     <>
     <div className="container my-4">
         <div className="card h-100"> 
-        <img src={juego.imagen} alt={juego.nombreProducto} />
+        <img src={imagen} alt={nombreProducto} />
         <div className="card-body">
-            <h6 className="card-title">{juego.nombreProducto}</h6>
-            <p className="card-text">{juego.precio}</p>
-            <p className="card-text">{juego.precioNuevo}</p>
+            <h6 className="card-title">{nombreProducto}</h6>
+            <p className="card-text">{precio}</p>
+            <p className="card-text">{precioNuevo}</p>
         </div>
       </div>
     </div>
