@@ -1,6 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
 import CarouselItem from 'react-bootstrap/esm/CarouselItem';
-import {cyberpunk, expedition33, residentEvilRequiem } from 'assets';
+import cyberpunk from "../../../../assets/cyberpunk.jpg";
+import expedition33 from '../../../../assets/expedition33.jpg';
+import residentEvilRequiem from '../../../../assets/residentEvilRequiem.jpg';
 
 const Carrousel = () => {
   return (
@@ -8,13 +10,13 @@ const Carrousel = () => {
     <div className="carrusel">
       <Carousel fade interval={3000} controls={true} indicators={true}>
         <Carousel.Item>
-          <Image className="d-block w-100" src={cyberpunk} alt="Cyberpunk"></Image>
+           <img src={cyberpunk.jpg} alt="cyberpunk" className="d-block w-100" />
         </Carousel.Item>
         <Carousel.Item>
-          <Image className="d-block w-100" src={expedition33} alt="Expedition 33"></Image>
+          <img src={expedition33.jpg} alt="Expedition 33" className="d-block w-100" />
         </Carousel.Item>
         <Carousel.Item>
-          <Image className="d-block w-100" src={residentEvilRequiem} alt="Resident Evil Requiem"></Image>
+          <img src={residentEvilRequiem.jpg} alt="resident Evil Requiem" className="d-block w-100"/>
         </Carousel.Item>
       </Carousel>
     </div>
