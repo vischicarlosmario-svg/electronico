@@ -1,14 +1,14 @@
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CardJuego from './CardJuego'
-import productossPrueba from "../../../data/productosPrueba"
+import ProductosPrueba from "../../../data/ProductosPrueba"
 
 const Ofertas = () => {
   return (
     <>
-      <div className="">
+      <div className="container">
         <div className="">
-            <h2>
+            <h2>OFERTAS!</h2>
                 <div className="row">
                 {productos.slice(7,14).map((juego) => 
                 <div className="col-lg mb-4"key={juego.id}>
@@ -17,10 +17,10 @@ const Ofertas = () => {
                     precio={juego.precio}
                     imagen={juego.imagen}
                   />
+                  <Button onSubmit>Comprar</Button>
                 </div>
                 )}
                 </div>
-            </h2>
         </div>
       </div>
     </>

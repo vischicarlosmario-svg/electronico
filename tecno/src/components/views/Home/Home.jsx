@@ -16,6 +16,9 @@ const Home = () => {
     <div className="container">
       <Carrousel></Carrousel>
     </div>
+    <div className="container">
+      <JuegosPopulares></JuegosPopulares>
+    </div>
     </>
   );
 
