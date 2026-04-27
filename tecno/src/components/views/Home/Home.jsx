@@ -4,6 +4,7 @@ import App from '../../../App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Carrousel from "./Carrousel/Carrousel"
 import JuegosPopulares from './JuegosPopulares.jsx'
+import Novedades from './Novedades.jsx'
 
 const Home = () => {
 
@@ -15,6 +16,9 @@ const Home = () => {
     </div>
     <div className="container">
       <JuegosPopulares></JuegosPopulares>
+    </div>
+    <div>
+      <Novedades></Novedades>
     </div>
     </>
   );

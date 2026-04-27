@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import CardJuego from './CardJuego'
+import CardJuego from './CardJuego.jsx'
 import ProductosPrueba from "../../../data/ProductosPrueba"
 
 const Novedades = () => {
@@ -7,9 +7,9 @@ const Novedades = () => {
     <>
         <div className="novedades">
         <div className="juegosTitulo">
-            <h2>Juegos populares</h2>
+            <h2>novedades</h2>
             <div className="row">
-                {productos.slice(7,14).map((juego) => 
+                {ProductosPrueba.slice(7,9).map((juego) => 
                 <div className="col-lg mb-4"key={juego.id}>
                   <CardJuego
                     titulo={juego.nombreProducto}
@@ -18,6 +18,7 @@ const Novedades = () => {
                   />
                 </div>
                 )}
+                <div></div>
             </div>
         </div>
     </div>
