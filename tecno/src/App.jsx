@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router"
 import Menu from "./components/shared/Menu"
 import Footer from "./components/shared/Footer"
-import Home from "./components/views/Home/Home"
+import Home from "./components/views/Home/Home.jsx"
 import DetalleDeProducto from "./components/views/Producto/DetalleDeProducto"
 import Login from "./components/views/Login"
 import Administrador from "./components/views/Administrador"

@@ -1,4 +1,3 @@
-import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CardJuego from './CardJuego'
 import ProductosPrueba from "../../../data/ProductosPrueba"

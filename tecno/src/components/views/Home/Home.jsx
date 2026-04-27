@@ -1,15 +1,12 @@
 import { StrictMode, useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
-import './App.css'
-import App from './App.jsx'
-import 'bootstrap-icons/font/bootstrap-icons.min.css'
+import App from '../../../App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Carrousel from './Carrousel/Carrousel.jsx'
+import Carrousel from "./Carrousel/Carrousel"
 import JuegosPopulares from './JuegosPopulares.jsx'
 
 const Home = () => {
 
-  }
 
   return (
     <>
@@ -21,5 +18,5 @@ const Home = () => {
     </div>
     </>
   );
-
+}
 export default Home;

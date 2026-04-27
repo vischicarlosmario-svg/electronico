@@ -5,19 +5,16 @@ import {cyberpunk, expedition33, residentEvilRequiem } from 'assets';
 const Carrousel = () => {
   return (
     <main>
-      interval={3000},
-      fade
-      controls={true}
     <div className="carrusel">
       <Carousel fade interval={3000} controls={true} indicators={true}>
         <Carousel.Item>
-          <CarouselImage className="d-block w100" alt="Cyberpunk">{cyberpunk}</CarouselImage>
+          <Image className="d-block w-100" src={cyberpunk} alt="Cyberpunk"></Image>
         </Carousel.Item>
         <Carousel.Item>
-          <CarouselImage className="d-block w100" alt="Expedition 33">{expedition33}</CarouselImage>
+          <Image className="d-block w-100" src={expedition33} alt="Expedition 33"></Image>
         </Carousel.Item>
         <Carousel.Item>
-          <CarouselImage className="d-block w100" alt="Resident Evil Requiem">{residentEvilRequiem}</CarouselImage>
+          <Image className="d-block w-100" src={residentEvilRequiem} alt="Resident Evil Requiem"></Image>
         </Carousel.Item>
       </Carousel>
     </div>
@@ -25,4 +22,4 @@ const Carrousel = () => {
   )
 }
 
-export default Carrousel
+export default Carrousel;
