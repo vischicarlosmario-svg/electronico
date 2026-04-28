@@ -6,7 +6,7 @@ const CardJuego = ({nombreProducto, precio, imagen}) => {
       <div className="card h-100"> 
         <img src={imagen} alt={nombreProducto} />
         <div className="card-body">
-            <h6 className="card-title">{nombreProducto}</h6>
+            <h6 className="card-title text-white">{nombreProducto}</h6>
             <p className="card-text">{precio}</p>
         </div>
       </div>

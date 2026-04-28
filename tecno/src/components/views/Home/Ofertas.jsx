@@ -12,7 +12,7 @@ const Ofertas = () => {
                 {productos.slice(7,14).map((juego) => 
                 <div className="col-lg mb-4"key={juego.id}>
                   <CardJuego
-                    titulo={juego.nombreProducto}
+                    nombreProducto={juego.nombreProducto}
                     precio={juego.precio}
                     imagen={juego.imagen}
                   />

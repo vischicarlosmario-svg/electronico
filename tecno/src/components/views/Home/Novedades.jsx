@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import CardJuego from './CardJuego.jsx'
 import ProductosPrueba from "../../../data/ProductosPrueba"
 
-const Novedades = () => {
+const Novedades = ({nombreProducto, precio, imagen}) => {
   return (
     <>
         <div className="novedades">
@@ -12,7 +12,7 @@ const Novedades = () => {
                 {ProductosPrueba.slice(7,9).map((juego) => 
                 <div className="col-lg mb-4"key={juego.id}>
                   <CardJuego
-                    titulo={juego.nombreProducto}
+                    nombreProducto={juego.nombreProducto}
                     precio={juego.precio}
                     imagen={juego.imagen}
                   />
