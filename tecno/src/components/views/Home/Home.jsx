@@ -15,10 +15,10 @@ const Home = () => {
       <Carrousel></Carrousel>
     </div>
     <div className="container">
-      <JuegosPopulares></JuegosPopulares>
+      <Novedades></Novedades>
     </div>
     <div>
-      <Novedades></Novedades>
+      <JuegosPopulares></JuegosPopulares>
     </div>
     </>
   );
