@@ -1,10 +1,10 @@
 
-const queries = () => {
-  return (
-    <div>
+// const queries = () => {
+//   return (
+//     <>
       
-    </div>
-  )
-}
+//     </>
+//   )
+// }
 
-export default queries
+// export default queries
