@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router"
 import Menu from "./components/shared/Menu"
 import Footer from "./components/shared/Footer"
-import Home from "./components/views/Home"
+import Home from "./components/views/Home/Home.jsx"
 import DetalleDeProducto from "./components/views/Producto/DetalleDeProducto"
 import Login from "./components/views/Login"
 import Administrador from "./components/views/Administrador"
@@ -13,24 +13,24 @@ import './App.css'
 
 function App() {
   const sesionUsuario = JSON.parse(sessionStorage.getItem("usuarioKey")) || false;
-  const [usuarioLogeado, setUsuarioLogueado] = useState(sesionUsuario);
-  const [productor, setProductos] = useState([])
+  const [usuarioLogueado, setUsuarioLogueado] = useState(sesionUsuario);
+  const [productos, setProductos] = useState([])
 
   useEffect(() => {
-    sessionStorage.setItem('usuarioKey', JSON.stringify(usuarioLogeado))
+    sessionStorage.setItem('usuarioKey', JSON.stringify(usuarioLogueado))
   }, [usuarioLogueado]
   )
 
   return (
     <>
       <BrowserRouter>
-        <Menu usuarioLogueado={usuarioLogeado} setUsuarioLoguado={setUsuarioLogueado}></Menu>
+        <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
         <main>
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/detalle" element={<DetalleDeProducto/>}/>
             <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
-            <Route path="/Adiministrador" element={<ProtectorAdmin usuarioLogeado={usuarioLogeado}/>}>
+            <Route path="/Adiministrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado}/>}>
               <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>}/>
               <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>
               <Route path="editar/:id" element={<FormularioProducto titulo="Editar Producto"></FormularioProducto>}/>
