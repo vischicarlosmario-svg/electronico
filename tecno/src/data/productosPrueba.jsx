@@ -19,12 +19,12 @@ const ProductosPrueba = [
     },
     {
         id: "3",
-        nombreProducto: "Minecraft",
+        nombreProducto: "Diablo IV",
         precio: "$30 USD",
-        descripcion_breve: "Minecraft es un videojuego de construcción de tipo «mundo abierto» o en inglés sandbox creado originalmente por el sueco Markus Persson, que creó posteriormente Mojang Studios",
-        descripcion_amplia: "CREA, Crea lo que sea que puedas imaginar en tu propio mundo infinito que es único cada vez que lo juegues.",
+        descripcion_breve: "",
+        descripcion_amplia: "",
         categoria: "Sandbox, Aventuras, Casual, Multijugador, Un jugador",
-        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh6CvNBjNv9sizrmGAmt-Nipj6e31SkQybH3e1UQWUjqshwCiXmwS_bcofVdZHLXGDrzEtcUwjpnxtnejKNKwkWCa6CpoXvFw3bVLF030&s=10"
+        imagen: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3958690/extras/2c3163294577adf42edea776705057ff.avif?t=1777408963"
     },
     {
         id: "4",
