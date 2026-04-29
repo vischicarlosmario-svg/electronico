@@ -14,6 +14,7 @@ const Novedades = ({nombreProducto, precio, imagen}) => {
                 {ProductosPrueba.slice(6,8).map((juego) => (
                 <div className="col-6 col-md-4 col-lg-5"key={juego.id}>
                   <CardJuego
+                    id={juego.id}
                     nombreProducto={juego.nombreProducto}
                     precio={juego.precio}
                     imagen={juego.imagen}

@@ -1,6 +1,7 @@
-import { Container, Row, Col, Card } from "react-bootstrap"
+import { Container, Row, Col, Card, Button } from "react-bootstrap"
 import CardJuego from "../Home/cards/CardJuego";
 import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares.jsx";
+import Novedades from "../Home/estructuraHome/Novedades.jsx";
 import ProductosPrueba from "../../../data/ProductosPrueba.jsx"
 import { useParams } from "react-router";
 
@@ -35,6 +36,9 @@ const DetalleDeProducto = ({nombreProducto, precio, imagen, categoria, descripci
               <span className="fw-semibold ">Categoria:</span> {mostrarJuego.categoria}
               <br className='mb-3'/>
               <span className="fw-semibold ">Precio: {mostrarJuego.precio}</span></Card.Text>
+              <Button className="btn btn-succes btn-lg w-50">
+                Comprar
+              </Button>
               <Button className="btn btn-succes btn-lg w-50" >
                 Añadir al carrito
               </Button>
