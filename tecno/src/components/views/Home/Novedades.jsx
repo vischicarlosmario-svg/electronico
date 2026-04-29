@@ -7,9 +7,9 @@ const Novedades = ({nombreProducto, precio, imagen}) => {
     <>
         <div className="novedades">
         <div className="juegosTitulo">
-            <h2>novedades</h2>
+            <h2>Novedades</h2>
             <div className="row">
-                {ProductosPrueba.slice(7,9).map((juego) => 
+                {ProductosPrueba.slice(7,9).map((juego) => (
                 <div className="col-lg mb-4"key={juego.id}>
                   <CardJuego
                     nombreProducto={juego.nombreProducto}
@@ -17,7 +17,7 @@ const Novedades = ({nombreProducto, precio, imagen}) => {
                     imagen={juego.imagen}
                   />
                 </div>
-                )}
+                ))}
                 <div></div>
             </div>
         </div>
