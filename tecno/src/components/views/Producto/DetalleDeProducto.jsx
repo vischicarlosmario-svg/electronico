@@ -1,9 +1,8 @@
 import { Container, Row, Col, Card } from "react-bootstrap"
 import ProductosPrueba from "../../../data/ProductosPrueba"
 
-import { Container, Row, Col, Card } from "react-bootstrap"
 
-const DetalleDeProducto = () => {
+const DetalleDeProducto = ({nombreProducto, precio, imagen, categoria, descripcion_breve, descripcion_amplia}) => {
   return (
      <Container className="my-3 mainSection cabin-sketch-regular">
       <Card>
@@ -11,21 +10,21 @@ const DetalleDeProducto = () => {
           <Col md={6}>
             <Card.Img
               variant="top"
-              src='https://images.pexels.com/photos/2619970/pexels-photo-2619970.jpeg'
-              alt='pizza'
+              src={DetalleDeProducto.imagen}
+              alt={DetalleDeProducto.nombreProducto}
             />
           </Col>
           <Col md={6}>
             <Card.Body>
-              <Card.Title className="fs-2">Pizza Margarita Clásica</Card.Title>
+              <Card.Title className="fs-2">{DetalleDeProducto.nombreProducto}</Card.Title>
               <hr />
               <Card.Text className="fs-5">
-              Nuestra pizza margarita artesanal hecha con masa madre, salsa de tomate casera, queso mozzarella de búfala premium y hojas frescas de albahaca. Horneada en horno de piedra para obtener ese crujiente perfecto.
+              {DetalleDeProducto.descripcion_breve}
               <br/>
               <br/>
-              <span className="fw-semibold ">Categoria:</span> comida
+              <span className="fw-semibold ">Categoria:</span> {DetalleDeProducto.categoria}
               <br className='mb-3'/>
-              <span className="fw-semibold ">Precio: $4500</span></Card.Text>
+              <span className="fw-semibold ">Precio: {DetalleDeProducto.precio}</span></Card.Text>
             </Card.Body>
           </Col>
         </Row>
