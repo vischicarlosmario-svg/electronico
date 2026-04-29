@@ -1,10 +1,10 @@
 import { Container, Row, Col, Card } from "react-bootstrap"
-import ProductosPrueba from "../../../../data/ProductosPrueba.jsx"
+import ProductosPrueba from "../../../data/ProductosPrueba"
 
 const DetalleDeProducto = () => {
   return (
     <>
-      <Container>
+      {/* <Container>
         <Card>
           <Row>
             <Col md={6}>
@@ -16,7 +16,7 @@ const DetalleDeProducto = () => {
             </Col>
           </Row>
         </Card>
-      </Container>
+      </Container> */}
     </>
   )
 }
