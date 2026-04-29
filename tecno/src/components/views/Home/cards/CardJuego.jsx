@@ -2,11 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import ProductosPrueba from '../../../../data/ProductosPrueba'
 import { useNavigate } from "react-router"
 
-const CardJuego = ({nombreProducto, precio, imagen}) => {
+const CardJuego = ({id, nombreProducto, precio, imagen}) => {
 
   const navegar = useNavigate();
   const detalleProducto = () => {
-    navegar(`/DetalleDeProducto/`);
+    navegar(`/detalle/${id}`);
     console.log("click detectado redirigiendo a detalleProducto");
     
   }
