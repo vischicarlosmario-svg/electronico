@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import ProductosPrueba from '../../../data/ProductosPrueba'
 const CardJuego = ({nombreProducto, precio, imagen}) => {
   return (
+    //modelo de card para usarse en los productos
     <>
     <div className="">
       <div className="card"> 

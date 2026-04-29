@@ -5,6 +5,7 @@ const CardOferta = ({nombreProducto, imagen, descuente, precio, precioNuevo}) =>
     const precioNuevo = ({});
 
   return (
+    //este componente todavia no esta en uso
     <>
     <div className="container my-4">
         <div className="card h-100"> 

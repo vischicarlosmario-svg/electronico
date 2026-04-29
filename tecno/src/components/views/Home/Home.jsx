@@ -8,7 +8,7 @@ import Novedades from './Novedades.jsx'
 
 const Home = () => {
 
-
+//este componente no necesita muchos cambios debido a que todo el contenido esta dentro de los componentes importados
   return (
     <>
     <div className="container">

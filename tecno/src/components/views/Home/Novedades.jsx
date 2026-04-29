@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import CardJuego from './CardJuego.jsx'
 import ProductosPrueba from "../../../data/ProductosPrueba.jsx"
 
+//Este componente saca el modelo de card de CardJuego
+
 const Novedades = ({nombreProducto, precio, imagen}) => {
   return (
     <>
