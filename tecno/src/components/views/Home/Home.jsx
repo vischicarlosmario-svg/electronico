@@ -14,10 +14,10 @@ const Home = () => {
     <div className="container">
       <Carrousel></Carrousel>
     </div>
-    <div className="container">
+    <div className="container-fluid">
       <Novedades></Novedades>
     </div>
-    <div>
+    <div className="container-fluid">
       <JuegosPopulares></JuegosPopulares>
     </div>
     </>

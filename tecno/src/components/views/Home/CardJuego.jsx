@@ -3,12 +3,14 @@ import ProductosPrueba from '../../../data/ProductosPrueba'
 const CardJuego = ({nombreProducto, precio, imagen}) => {
   return (
     <>
-      <div className="card h-100"> 
+    <div className="">
+      <div className="card"> 
         <img src={imagen} alt={nombreProducto} />
         <div className="card-body">
             <h6 className="card-title text-white">{nombreProducto}</h6>
-            <p className="card-text">{precio}</p>
+            <p className="card-text mt-3">{precio}</p>
         </div>
+      </div>
       </div>
     </>
   )

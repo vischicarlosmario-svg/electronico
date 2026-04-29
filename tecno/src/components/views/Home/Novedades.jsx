@@ -5,12 +5,12 @@ import ProductosPrueba from "../../../data/ProductosPrueba"
 const Novedades = ({nombreProducto, precio, imagen}) => {
   return (
     <>
-        <div className="novedades">
+        <div className="novedades container-fluid">
         <div className="juegosTitulo">
-            <h2>Novedades</h2>
-            <div className="row">
+            <h2 className="">Novedades</h2>
+            <div className="row justify-content-center">
                 {ProductosPrueba.slice(7,9).map((juego) => (
-                <div className="col-lg mb-4"key={juego.id}>
+                <div className="col-6 col-md-4 col-lg-5"key={juego.id}>
                   <CardJuego
                     nombreProducto={juego.nombreProducto}
                     precio={juego.precio}
