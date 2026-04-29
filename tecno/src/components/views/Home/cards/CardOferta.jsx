@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import ProductosPrueba from "../../../data/ProductosPrueba"
+import ProductosPrueba from "../../../../data/ProductosPrueba"
 
 const CardOferta = ({nombreProducto, imagen, descuente, precio, precioNuevo}) => {
     const precioNuevo = ({});

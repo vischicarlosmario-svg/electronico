@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import CardJuego from './cards/CardJuego'
-import ProductosPrueba from "../../../data/ProductosPrueba"
+import CardJuego from '../cards/CardJuego'
+import ProductosPrueba from "../../../../data/ProductosPrueba"
 //Este componente aun no esta en uso
 
 const Ofertas = () => {
