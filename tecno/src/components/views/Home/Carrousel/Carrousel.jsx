@@ -10,13 +10,13 @@ const Carrousel = () => {
     <div className="carrusel">
       <Carousel fade interval={3000} controls={true} indicators={true}>
         <Carousel.Item>
-           <img src={cyberpunk} alt="cyberpunk" className="d-block w-100" />
+           <img src={cyberpunk} alt="cyberpunk" className="carrouselimage d-block w-100" />
         </Carousel.Item>
         <Carousel.Item>
-          <img src={expedition33} alt="Expedition 33" className="d-block w-100" />
+          <img src={expedition33} alt="Expedition 33" className="carrouselimage d-block w-100" />
         </Carousel.Item>
         <Carousel.Item>
-          <img src={residentEvilRequiem} alt="resident Evil Requiem" className="d-block w-100"/>
+          <img src={residentEvilRequiem} alt="resident Evil Requiem" className="carrouselimage d-block w-100"/>
         </Carousel.Item>
       </Carousel>
     </div>

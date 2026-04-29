@@ -1,9 +1,23 @@
+import { Container, Row, Col, Card } from "react-bootstrap"
+import ProductosPrueba from "../../../../data/ProductosPrueba.jsx"
 
 const DetalleDeProducto = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Container>
+        <Card>
+          <Row>
+            <Col md={6}>
+            <Card.img
+            variant="top"
+            src={}
+            alt=""
+            />
+            </Col>
+          </Row>
+        </Card>
+      </Container>
+    </>
   )
 }
 
