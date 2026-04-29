@@ -1,7 +1,7 @@
 import { Button, Table } from "react-bootstrap"
 import { Link } from "react-router"
 import ItemProducto from "./Producto/ItemProducto"
-import productosPrueba from "../../data/productosPrueba"
+import productosPrueba from "../../data/ProductosPrueba"
 // import { listaProductos } from "../../helpers/queries.js"
 import Swal from "sweetalert2"
 
