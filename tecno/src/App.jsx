@@ -9,6 +9,8 @@ import FormularioProducto from "./components/views/Producto/FormularioProducto"
 import Error404 from "./components/views/Error404"
 import { useEffect, useState } from "react"
 import ProtectorAdmin from "./components/routes/ProtectorAdmin"
+import { BrowserRouter, Route, Routes } from "react-router"
+import Menu from "./components/shared/Menu"
 import './App.css'
 
 function App() {
