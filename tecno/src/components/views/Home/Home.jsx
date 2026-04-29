@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client'
 import App from '../../../App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Carrousel from "./Carrousel/Carrousel"
-import JuegosPopulares from './JuegosPopulares.jsx'
-import Novedades from './Novedades.jsx'
+import JuegosPopulares from './EstructuraHome/JuegosPopulares.jsx'
+import Novedades from './EstructuraHome/Novedades.jsx'
 
 const Home = () => {
 
