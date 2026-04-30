@@ -9,11 +9,12 @@ import { useParams } from "react-router";
 const DetalleDeProducto = ({nombreProducto, precio, imagen, categoria, descripcion_breve, descripcion_amplia}) => {
 
   const { id } = useParams();
-  console.log("El id que llegó a la url es:", id);
+  console.log("El id que llego es:", id);
  
 
   const mostrarJuego = ProductosPrueba.find((juego) => juego.id.toString() === id);
    console.log("Encontro el juego en la base de datos?:", mostrarJuego);
+
   return (
      <Container className="my-3 mainSection cabin-sketch-regular">
       <Card>
