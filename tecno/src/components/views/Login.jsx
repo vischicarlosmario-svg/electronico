@@ -10,7 +10,7 @@ const Login = ({ setUsuarioLogueado }) => {
   const handlePassword = () => { setShowPassword(!showPassword) }
   const {
     register,
-    handelerSubmit,
+    handleSubmit,
     formState: { errors },
   } = useForm();
 
@@ -19,7 +19,7 @@ const Login = ({ setUsuarioLogueado }) => {
   const onSubmit = (data) => {
     if (
       data.email === import.meta.env.VITE_API_EMAIL &&
-      data.pasword === import.meta.env.VITE_API_PASSWORD
+      data.password === import.meta.env.VITE_API_PASSWORD
     ) 
     {
       console.log('Aqui logueo al usuario')
@@ -44,9 +44,9 @@ const Login = ({ setUsuarioLogueado }) => {
       <Card className="shadow p-3 mb-5 bg-body rounded card-login">
         <Row xs={1} md={2}>
           <Col>
-            <Card.body>
+            <Card.Body>
               <h1 className="text-center mb-4">Iniciar secion</h1>
-              <Form onSubmit={habdSubmit(onSubmit)}>
+              <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Email:</Form.Label>
                   <Form.Control
@@ -60,9 +60,9 @@ const Login = ({ setUsuarioLogueado }) => {
                       }
                     })}
                   />
-                  <Form.text className="text-danger">
-                    {errors.mail?.message}
-                  </Form.text>
+                  <Form.Text className="text-danger">
+                    {errors.email?.message}
+                  </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPasword">
                   <Form.Label>Contraseña:</Form.Label>
@@ -92,7 +92,7 @@ const Login = ({ setUsuarioLogueado }) => {
                   Iniciar sesion.
                 </Button>
               </Form>
-            </Card.body>
+            </Card.Body>
           </Col>
         </Row>
       </Card>
