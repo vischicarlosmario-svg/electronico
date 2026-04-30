@@ -19,6 +19,7 @@ const Administrador = ({ setProductos, productos }) => {
           <Link className="btn btn-primary me-2" to="./crear">
             <i className="bi bi-file-earmark-plus"></i>
           </Link>
+          <Button variant="info" className="text-light" onClick={cargarProductosPrueba}><i className="bi bi-database-fill-up"></i></Button>
         </div>
         <hr />
         <Table responsive striped bordered hover variant="dark">
