@@ -5,7 +5,7 @@ import ProductosPrueba from "../../../data/ProductosPrueba"
 const Novedades = ({nombreProducto, precio, imagen}) => {
   return (
     <>
-        <div className="novedades">
+        <div className="novedades d-fex">
         <div className="juegosTitulo">
             <h2>novedades</h2>
             <div className="row">

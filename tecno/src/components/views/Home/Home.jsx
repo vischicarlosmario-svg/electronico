@@ -8,7 +8,6 @@ import Novedades from './Novedades.jsx'
 
 const Home = () => {
 
-
   return (
     <>
     <div className="container">
@@ -18,7 +17,7 @@ const Home = () => {
       <Novedades></Novedades>
     </div>
     <div>
-      <JuegosPopulares></JuegosPopulares>
+      <JuegosPopulares className=""></JuegosPopulares>
     </div>
     </>
   );
