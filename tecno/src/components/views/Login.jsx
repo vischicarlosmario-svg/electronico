@@ -14,7 +14,7 @@ const Login = ({ setUsuarioLogueado }) => {
     formState: { errors },
   } = useForm();
 
-  const navigacion = useNavigate()
+  const navegacion = useNavigate()
 
   const onSubmit = (data) => {
     if (
@@ -22,7 +22,6 @@ const Login = ({ setUsuarioLogueado }) => {
       data.password === import.meta.env.VITE_API_PASSWORD
     ) 
     {
-      console.log('Aqui logueo al usuario')
       setUsuarioLogueado(true);
       Swal.fire({
         title: "Bienvenido Sr Administrador",
@@ -45,7 +44,7 @@ const Login = ({ setUsuarioLogueado }) => {
         <Row xs={1} md={2}>
           <Col>
             <Card.Body>
-              <h1 className="text-center mb-4">Iniciar secion</h1>
+              <h1 className="text-center mb-4">Iniciar sesion</h1>
               <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Email:</Form.Label>

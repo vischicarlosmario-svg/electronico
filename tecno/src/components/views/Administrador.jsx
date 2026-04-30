@@ -12,7 +12,7 @@ const Administrador = ({ setProductos, productos }) => {
 
   return (
     <section className="container">
-      <div className="d-flex justify-content-between alig-item-center mt-5">
+      <div className="d-flex justify-content-between mt-5">
         <h1 className="display-4">Productos disponibles</h1>
         <div>
           <Link className="btn btn-primary me-2" to="./crear">
@@ -20,7 +20,7 @@ const Administrador = ({ setProductos, productos }) => {
           </Link>
         </div>
         <hr />
-        <Table responsive striped bordered hover variant="dark">
+        <Table striped bordered hover variant="dark">
           <thead>
             <tr className="text-center">
               <th>#</th>
