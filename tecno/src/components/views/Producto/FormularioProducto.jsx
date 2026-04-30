@@ -59,7 +59,7 @@ const FormularioProducto = ({titulo}) => {
         alert("Ocurrio un error")
       }
     } else {
-      const respuesta = await editarProducto(id, producto)
+      const respuesta = await editarProducto(id,producto)
       if (respuesta.status === 200) {
         Swal.fire({
           title: "Producto modificado",
