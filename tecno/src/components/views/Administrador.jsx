@@ -1,13 +1,8 @@
 import { Button, Table } from "react-bootstrap"
 import { Link } from "react-router"
 import ItemProducto from "./Producto/ItemProducto"
-<<<<<<< HEAD
 import productosPrueba from "../../data/productosPrueba"
 //import { listaProductos } from "../../helpers/queries.js"
-=======
-import productosPrueba from "../../data/ProductosPrueba"
-// import { listaProductos } from "../../helpers/queries.js"
->>>>>>> d9daae080cd0b80e9cdf2ab67ec43ab7b4f71425
 import Swal from "sweetalert2"
 
 const Administrador = ({ setProductos, productos }) => {
