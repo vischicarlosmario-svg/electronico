@@ -2,42 +2,71 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares";
 import ProductosPrueba from "../../../data/productosPrueba";
+import ItemProducto from "./ItemProducto";
 
-const FormularioProducto = ({titulo}) => {
+
+export const Productos = () => {
+  const [resgistros, setRegistros] = useState([])
   
-  const {
-    register,
-    handleSubmit,
-    reset,
-    setValue,
-    formState: { errors },
-  } = useForm();
+  const [nombre, setNombre] = useState()
 
-  const {id} = useParams();
-
-  const navegacion = useNavigate();
-
-  const buscarProducto = () => {
-    if (titulo === "Editar Producto" && id) {
-      const productosGuardados = JSON.parse(localStorage.getItem("misProductos")) || [];
-      const productoBuscado = productosGuardados.find((p) => String(p.id) === String )
-
-      if (productoBuscado) {
-        setValue("nombreProducto", productoBuscado.nombreProducto);
-        setValue("precio", productoBuscado.precio);
-        setValue("imagen", productoBuscado.imagen);
-        setValue("descripcion_breve", productoBuscado.descripcion_breve);
-        setValue("descipcion_amplia", productoBuscado.descripcion_amplia);
-        setValue("categoria", productoBuscado.categoria);
-
-      }
-      }
-    }
+  const botonGuardar = (e) => {
+    e.prevenDefault();
+    const miObjeto = { id, nombre, precio, categoria, descripcion_breve, descripcion_amplia, imagen}
+    setRegistros([...resgistros, miObjeto]);
+    limpiarFormulario();
   }
-{
+
+  const limpiarFormulario = () => {
+    setNombre("")
+    setPrecio()
+    setCategoria()
+    setDescripcion_breve()
+    setDescripcion_amplia()
+    setImagen()
+    document.getElementById("miformulario").reset();
+  }
+
+  return {
+
+  }
+}
+    const FormularioProducto = () => {
+
+      const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+      } = useForm();
+
+      const tareasLocalStorage = JSON.parse(localStorage.getItem('productoKey')) || []
+      const [productos, setProductos] = useState(ProductosLocalStorage);
+
+      useEffect (()=> {
+        localStorage.setItem('productosKey', JSON.stringify(productos))
+      }, [productos])
+
+      const posteriorValidacion = (data) => {
+
+        setProductos([...productos, data.productos])
+
+        reset()
+      }
+
+      const borrarProducto = (nombreProducto) => {
+        const productosFiltrados = productos.filter((ItemProducto) => ItemProducto !== nombreProducto)
+
+        setProductos(productosFiltrados)
+      }
+
+const FormularioProducto
+
+
+
 
 
   return (
