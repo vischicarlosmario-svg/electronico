@@ -59,7 +59,22 @@ const FormularioProducto = ({titulo}) => {
         alert("Ocurrio un error")
       }
     } else {
-      
+      const respuesta = await editarProducto(id, producto)
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: "Producto modificado",
+          text: `El producto ${producto.nombreProducto} se actualizo correctamente`,
+          icon: "succes"
+        });
+        navegacion("/Administrador");
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error",
+          text: `No se pudo actualizar el ${producto.nombreProducto}`,
+          icon: "error"
+        })
+      }
+
     }
   }
 
