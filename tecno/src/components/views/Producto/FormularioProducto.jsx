@@ -1,137 +1,74 @@
-// import { Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import { useNavigate, useParams } from "react-router";
+import { useEffect } from "react";
+import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares";
 
-// const FormularioProducto = () => {
-//   const {
-//     register, 
-//     handleSubmit,
-//     reset,
-//     setValue,
-//     formState { errors },
-//   } = useForm();
+const FormularioProducto = ({titulo}) => {
+  
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setValue,
+    formState: { errors },
+  } = useForm();
 
-//   const onSubmit = () => {
+  const {id} = useParams();
 
-//   }
-//   return (
-//     <section className="container mainSection">
-//       <h1 className="display-4 mt-5">{titulo}</h1>
-//       <hr />
-//       <Form className="my-4" onSubmit={handleSubmit(onsubmit)}>
-//         <Form.Group className="mb-3" controlId="formNombreProducto">
-//           <Form.Label>Producto*</Form.Label>
-//           <Form.Control type="text" placeholder="Ej: Pizza" 
-//           {...register("nombreProducto",{
-//             required: "El nombre del producto es un dato obligatorio",
-//             minLength: {
-//               value: 2,
-//               message: "El nombre del prodcto debe tener al menos dos caracteres",
-//             },
-//             maxLength: {
-//               value: 100,
-//               message: "El nombre del producto debe tener como maximo 100 caracteres"
-//             }
-//           } )}/>
-//           <Form.Text className="text-danger">{errors.nombreProducto?.message}</Form.Text>
-//         </Form.Group>
-//         <Form.Group className="mb-3" controlId="formPrecio">
-//           <Form.Label>Precio*</Form.Label>
-//           <Form.Control
-//             type="number"
-//             placeholder="Ej: 5000"
-//             // step={0.1}
-//             {...register("precio", {
-//               min: {
-//                 value: 100,
-//                 message: "El precio minimo del producto debe ser al menos $100",
-//               },
-//               max: {
-//                 value: 100000,
-//                 message: "El precio minimo del producto debe ser de hasta $100000"
-//               }
-//             })}
-//           />
-//           <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
-//         </Form.Group>
-//         <Form.Group className="mb-3" controlId="formImagen">
-//           <Form.Label>Imagen URL*</Form.Label>
-//           <Form.Control
-//             type="text"
-//             placeholder="Ej: https://www.pexels.com/es-es/pizza/"
-//             {...register("imagen", {
-//               required: "La URL de la imagen es un dato obligatorio",
-//               pattern: {
-//                 value: /^https?:\/\/[^\s]+\.(png|jpg|jpeg|gif|bmp|webp|svg)$/,
-//                 message: "La imagen debe ser un url de imagen valida terminada en /^https?:\/\/[^\s]+\.(png|jpg|jpeg|gif|bmp|webp|svg)$/"
-//               }
-//             })}
-//           />
-//           <Form.Text className="text-danger"></Form.Text>
-//         </Form.Group>
-//         <Form.Group className="mb-3" controlId="formPrecio">
-//           <Form.Label>Categoría*</Form.Label>
-//           <Form.Select>
-//             {...register("categoria", {required: "Debe seleccionar una categoria", })}
-//             <option value="">Seleccione una opcion</option>
-//             <option value="Acompañamientos">Acompañamientos</option>
-//             <option value="Bebidas">Bebidas</option>
-//             <option value="Ensaladas">Ensaladas</option>
-//             <option value="Hamburguesas">Hamburguesas</option>
-//             <option value="Postres">Postres</option>
-//             <option value="Pizzas">Pizzas</option>
-//             <option value="Sándwiches y Wraps">Sándwiches y Wraps</option>
-//             <option value="Veggie/Veganas">Veggie/Veganas</option>
-//           </Form.Select>
-//           <Form.Text className="text-danger"></Form.Text>
-//         </Form.Group>
-//         <Form.Group className="mb-3" controlId="formImagen">
-//           <Form.Label>Descripción breve*</Form.Label>
-//           <Form.Control
-//             type="text"
-//             placeholder="Ej: Pizza tradicional con salsa de tomate, mozzarella y albahaca."
-//             as="textarea"
-//                         {...register("descripcion_breve", {
-//               required: "La descripcion es un dato obligatorio",
-//               minLength: {
-//                 value: 5,
-//                 message: "La descripcion debe tener al menos 5 caracteres"
-//               },
-//               maxLength: {
-//                 value: 250,
-//                 message: "La descripcion debe tener como maximo 250 caracteres"
-//               }
-//             })}
-//           />
-//           <Form.Text className="text-danger">{errors.categoria?.message}</Form.Text>
-//         </Form.Group>
-//         <Form.Group className="mb-3" controlId="formImagen">
-//           <Form.Label>Descripción Amplia*</Form.Label>
-//           <Form.Control
-//             type="text"
-//             placeholder="Ej: Nuestra pizza margarita artesanal hecha con masa madre, salsa de tomate casera, queso mozzarella de búfala premium y hojas frescas de albahaca. Horneada en horno de piedra para obtener ese crujiente perfecto."
-//             as="textarea"
-//             rows={4}
-//             {...register("descripcion_amplia", {
-//               required: "La descripcion es un dato obligatorio",
-//               minLength: {
-//                 value: 10,
-//                 message: "La descripcion debe tener al menos 10 caracteres"
-//               },
-//               maxLength: {
-//                 value: 2500,
-//                 message: "La descripcion debe tener como maximo 500 caracteres"
-//               }
-//             })}
-//           />
-//           <Form.Text className="text-danger">{errors.descripcion_amplia?.message}</Form.Text>
-//         </Form.Group>
+  const navegacion = useNavigate()
 
-//         <Button type="submit" variant="success">
-//           Guardar
-//         </Button>
-//       </Form>
-//     </section>
-//   );
-// };
+  const buscarProducto = async () => {
+    if(titulo === "Editar Producto") {
+      console.log(id);
+      const respuesta = await obtenerProductoPorID(id);
+      if (respuesta.status === 200) {
+        const productoBuscado = await respuesta.json();
+        console.log(productoBuscado);
+        setValue("nombreProducto", productoBuscado.nombreProducto);
+        setValue("precio", productoBuscado.precio);
+        setValue("imagen", productoBuscado.imagen);
+        setValue("descripcion_breve", productoBuscado.descripcion_breve);
+        setValue("descripcion_amplia", productoBuscado.descripcion_amplia);
+        setValue("categoria", productoBuscado.categoria);
+      } else {
+        alert("Ocurrio un error, intentelo mas tarde")
+      }
+    }
+  }
 
-// export default FormularioProducto;
+  useEffect(() => {
+    if(titulo === "Editar Producto"){
+      buscarProducto()
+    }
+  }, []); 
 
+  const onSubmit = async(juego) => {
+    console.log(juego);
+    if (titulo === "Crear Producto") {
+      const respuesta = await crearProducto(juego)
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Producto creado",
+          text:`El producto ${producto.nombreProducto} se creo correctamente`,
+          icon: "succes"
+        });
+        reset();
+      } else {
+        alert("Ocurrio un error")
+      }
+    } else {
+      
+    }
+  }
+
+
+  return (
+    <>
+      
+    </>
+  )
+}
+
+export default FormularioPro
