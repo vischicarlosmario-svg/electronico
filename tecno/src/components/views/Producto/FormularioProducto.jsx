@@ -18,66 +18,26 @@ const FormularioProducto = ({titulo}) => {
 
   const {id} = useParams();
 
-  const navegacion = useNavigate()
+  const navegacion = useNavigate();
 
-  const buscarProducto = async () => {
-    if(titulo === "Editar Producto") {
-      console.log(id);
-      const respuesta = await obtenerProductoPorID(id);
-      if (respuesta.status === 200) {
-        const productoBuscado = await respuesta.json();
-        console.log(productoBuscado);
+  const buscarProducto = () => {
+    if (titulo === "Editar Producto" && id) {
+      const productosGuardados = JSON.parse(localStorage.getItem("misProductos")) || [];
+      const productoBuscado = productosGuardados.find((p) => String(p.id) === String )
+
+      if (productoBuscado) {
         setValue("nombreProducto", productoBuscado.nombreProducto);
         setValue("precio", productoBuscado.precio);
         setValue("imagen", productoBuscado.imagen);
         setValue("descripcion_breve", productoBuscado.descripcion_breve);
-        setValue("descripcion_amplia", productoBuscado.descripcion_amplia);
+        setValue("descipcion_amplia", productoBuscado.descripcion_amplia);
         setValue("categoria", productoBuscado.categoria);
-      } else {
-        alert("Ocurrio un error, intentelo mas tarde")
+
+      }
       }
     }
   }
-
-  useEffect(() => {
-    if(titulo === "Editar Producto"){
-      buscarProducto()
-    }
-  }, []); 
-
-  const onSubmit = async(juego) => {
-    console.log(juego);
-    if (titulo === "Crear Producto") {
-      const respuesta = await crearProducto(juego)
-      if (respuesta.status === 201) {
-        Swal.fire({
-          title: "Producto creado",
-          text:`El producto ${producto.nombreProducto} se creo correctamente`,
-          icon: "succes"
-        });
-        reset();
-      } else {
-        alert("Ocurrio un error")
-      }
-    } else {
-      const respuesta = await editarProducto(id, producto)
-      if (respuesta.status === 200) {
-        Swal.fire({
-          title: "Producto modificado",
-          text: `El producto ${producto.nombreProducto} se actualizo correctamente`,
-          icon: "succes"
-        });
-        navegacion("/Administrador");
-      } else {
-        Swal.fire({
-          title: "Ocurrio un error",
-          text: `No se pudo actualizar el ${producto.nombreProducto}`,
-          icon: "error"
-        })
-      }
-
-    }
-  }
+{
 
 
   return (
@@ -155,6 +115,50 @@ const FormularioProducto = ({titulo}) => {
           </Form.Select>
           <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
         </Form.Group>
+        <Form.Group className="mb-3" controlId="formDescripcionBreve">
+          <Form.Label>Descripcion breve</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ej: juego de accion diviertete"
+            as="texttarea"
+            {...register("descripcion_breve", {
+              required: "La descripcion es un dato obligatorio",
+              minLength: {
+                value: 100,
+                message: "La descripcion debe tener al menos 5 caracteres",
+              },
+              maxLength: {
+                value: 500,
+                message: "La descripcion debe tener como maximo 500 caracteres"
+              }
+            })}
+          />
+          <Form.Text className="text-danger">{errors.descripcion_breve?.message} </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formDescripcionAmplia">
+          <Form.Label>Descripcion Amplia*</Form.Label>
+          <Form.Control
+          type="text"
+          placeholder="Ej: Juego de accion diviertete y mas"
+          as="textarea"
+          rows={4}
+          {...register("descripcion_amplia", {
+            required: "La descripcion amplia es un dato obligatorio",
+            minLength: {
+              value: 300,
+              message: "La descripcion debe tener almenos 300 caracteres"
+            },
+            maxLength: {
+              value: 500,
+              message: "La descripcion debe tener como maximo 500 caracteres"
+            }
+          })}
+          />
+          <Form.Text className="text-danger">{errors.descripcion_amplia?.message}</Form.Text>
+        </Form.Group>
+        <Button type="submit" variant="succes">
+          Guardar
+        </Button>
       </Form>
     </section>
   )
