@@ -101,9 +101,41 @@ const FormularioProducto = ({titulo}) => {
          })}/>
          <Form.Text className="text-danger">{errors.nombreProducto?.message}</Form.Text>
         </Form.Group>
+        <Form.Group>
+          <Form.Label>Precio*</Form.Label>
+          <Form.Control
+           type="number"
+           placeholder="Ej: 10USD"
+           {...register("precio", {
+            required: "El precio del producto es un dato obligatorio",
+            min: {
+              value: 1,
+              message: "El precio minimo del producto debe ser al menos $1",
+            },
+            max: {
+              value: 1000,
+              message: "El precio minimo del producto debe ser de hasta $1000",
+            }
+           })}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Imagen URL*</Form.Label>
+          <Form.Control
+          type="text"
+          placeholder="Ej: https://www.pexels.com/es-es"
+          {...register("imagen", {
+            required: "La URL de la imagen es un dato obligatorio",
+            pattern: {
+              value: /^https?:\/\/[^\s]+\.(png|jpg|jpeg|gif|bmp|webp|svg)$/,
+              message: "La imagen debe ser un url de imagen valida terminada en (png|jpg|jpeg|gif|bpm|webp|svg)",
+            }
+          })}
+          />
+        </Form.Group>
       </Form>
     </section>
   )
 }
 
-export default FormularioPro
+export default FormularioProducto
