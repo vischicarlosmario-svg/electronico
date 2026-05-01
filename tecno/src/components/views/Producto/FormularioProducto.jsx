@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router";
 import { useEffect } from "react";
 import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares";
+import ProductosPrueba from "../../../data/productosPrueba";
 
 const FormularioProducto = ({titulo}) => {
   
@@ -80,9 +81,28 @@ const FormularioProducto = ({titulo}) => {
 
 
   return (
-    <>
-      
-    </>
+    <section className="container mainSection">
+      <h1 className="display-4 mt-5">{titulo}</h1>
+      <hr />
+      <Form className="my-4" onSubmit={handleSubmit(onSubmit)}>
+        <Form.Group className="mb-3" controlId="formNombreProducto">
+          <Form.Label>Producto</Form.Label>
+         <Form.Control type="text" placeholder="Ej: Juego" 
+         {...register("nombreProducto", {
+          required: "El nombre del producto es un dato obligatorio",
+          minLength: {
+            value: 50,
+            message: "El nombre del producto debe tener al menos 50 caracteres",
+          },
+          maxLength: {
+            value: 100,
+            message: "El nombre del producto debe tener como maximo 100 caracteres",
+          }
+         })}/>
+         <Form.Text className="text-danger">{errors.nombreProducto?.message}</Form.Text>
+        </Form.Group>
+      </Form>
+    </section>
   )
 }
 
