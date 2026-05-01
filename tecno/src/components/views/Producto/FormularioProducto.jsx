@@ -132,6 +132,28 @@ const FormularioProducto = ({titulo}) => {
             }
           })}
           />
+          <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Categoria*</Form.Label>
+          <Form.Select
+            {...register("categoria", {required: "Debe seleccionar una categoria",})}>
+              <option value="Accion"></option>
+              <option value="Aventura"></option>
+              <option value="Un jugador"></option>
+              <option value="Multijugador"></option>
+              <option value="Estrategia"></option>
+              <option value="Tierno"></option>
+              <option value="Shooter"></option>
+              <option value="Primera persona"></option>
+              <option value="Tercera Persona"></option>
+              <option value="Sandbox"></option>
+              <option value="Casual"></option>
+              <option value="Competitivo"></option>
+              <option value="Ciencia ficcion"></option>
+              <option value="Fantasia"></option>
+          </Form.Select>
+          <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
         </Form.Group>
       </Form>
     </section>

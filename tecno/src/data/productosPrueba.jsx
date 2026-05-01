@@ -68,7 +68,7 @@ const ProductosPrueba = [
         precio: "$45,00 USD",
         descripcion_breve: "Pragmata es un juego de acción y aventura de ciencia ficción de Capcom. Acompaña a Hugh, sobreviviente de una expedición trágica...",
         descripcion_amplia: "Pragmata es un juego de acción y aventura de ciencia ficción de Capcom, Acompaña a Hugh, sobreviviente de una expedición trágica, y a Diana, una androide, mientras avanzan por una instalación lunar dominada por una IA fuera de control para volver a Tierra",
-        categoria: "Ciencia Ficcion, Aventura, Un jugador",
+        categoria: "Ciencia Ficcion, Aventuras, Un jugador",
         imagen: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3357650/e32e168b25ed68a0cf6264c220c07e96c2abfb56/header.jpg?t=1777351016"
     },
         {
