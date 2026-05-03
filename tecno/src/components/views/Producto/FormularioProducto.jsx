@@ -45,7 +45,10 @@ const borrarProducto = (idProducto) => {
 
 }
 
-const editarProducto = ({productos , setProductos}) => {}
+const editarProducto = ({productos , setProductos}) => {
+  const productosFiltrados = productos.map(p => p.id !== idProducto)
+  setProductos(productosFiltrados)
+}
 
 
 
