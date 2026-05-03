@@ -46,7 +46,7 @@ const borrarProducto = (idProducto) => {
 }
 
 const editarProducto = ({productos , setProductos}) => {}
-}
+
 
 
   return (
@@ -177,5 +177,4 @@ const editarProducto = ({productos , setProductos}) => {}
 </>
 )
 }
-
 export default FormularioProducto

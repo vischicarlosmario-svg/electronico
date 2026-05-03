@@ -1,14 +1,14 @@
-// import { ListGroup } from "react-bootstrap"
-// import ItemProducto from "./ItemProducto"
+import { Button, ListGroup } from "react-bootstrap"
+import { Link } from "react-router"
+import Swal from "sweetalert2"
 
-// const ListaProducto = ({productos, borrarProducto}) => {
-//   return (
-//    <ListGroup className="mt-5">
-//     {
-//         productos.map((producto, indice) => <ItemProducto key={indice} producto={producto} borrarProducto={borrarProducto}></ItemProducto>)
-//     }
-//    </ListGroup>
-//   )
-// }
+const ListaProducto = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
 
-// export default ListaProducto
+export default ListaProducto
+

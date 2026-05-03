@@ -22,9 +22,9 @@ function App() {
     return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
   });
 
-  useEffect(() => {
-    localStorage.setItem('productosKey', JSON.stringify(productos))
-  }, [productos]);
+  // useEffect(() => {
+  //   localStorage.setItem('productosKey', JSON.stringify(productos))
+  // }, [productos]);
 
   return (
     <>
