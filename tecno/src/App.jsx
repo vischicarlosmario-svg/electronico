@@ -10,16 +10,21 @@ import Error404 from "./components/views/Error404"
 import { useEffect, useState } from "react"
 import ProtectorAdmin from "./components/routes/ProtectorAdmin"
 import './App.css'
+import ProductosPrueba from "./data/productosPrueba.jsx"
 
 function App() {
   const sesionUsuario = JSON.parse(sessionStorage.getItem("usuarioKey")) || false;
+  const productosGuardados = JSON.parse(localStorage.getItem('productoKey')) || [];
   const [usuarioLogueado, setUsuarioLogueado] = useState(sesionUsuario);
-  const [productos, setProductos] = useState([])
+
+  const [productos, setProductos] = useState(() => {
+    const productosGuardados = localStorage.getItem('productosKey')
+    return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
+  });
 
   useEffect(() => {
-    sessionStorage.setItem('usuarioKey', JSON.stringify(usuarioLogueado))
-  }, [usuarioLogueado]
-  )
+    localStorage.setItem('productosKey', JSON.stringify(productos))
+  }, [productos]);
 
   return (
     <>

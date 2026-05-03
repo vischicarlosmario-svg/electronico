@@ -37,10 +37,10 @@ const DetalleDeProducto = ({nombreProducto, precio, imagen, categoria, descripci
               <span className="fw-semibold ">Categoria:</span> {mostrarJuego.categoria}
               <br className='mb-3'/>
               <span className="fw-semibold ">Precio: {mostrarJuego.precio}</span></Card.Text>
-              <Button className="btn btn-succes btn-lg w-50">
+              <Button className="btn btn-success btn-lg w-50">
                 Comprar
               </Button>
-              <Button className="btn btn-succes btn-lg w-50" >
+              <Button className="btn btn-success btn-lg w-50" >
                 Añadir al carrito
               </Button>
             </Card.Body>

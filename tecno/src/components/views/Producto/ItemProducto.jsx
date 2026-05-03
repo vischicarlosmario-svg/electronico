@@ -1,26 +1,51 @@
-import { Button } from "react-bootstrap";
-import { Link } from "react-router";
+import { Button, ListGroup } from "react-bootstrap"
+import { Link } from "react-router"
+import Swal from "sweetalert2"
 
-const ItemProducto = ({itemProducto}) => {
+const ItemProducto = ({itemProducto, setProductos, borrarProducto, fila, productos}) => {
+
+  const confirmarBorrado = () => {
+    Swal.fire({
+      title: `Borrar ${itemProducto.nombreProducto}?`,
+      text: "Esta acción no se puede deshacer",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, eliminar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Aquí es donde sucede la magia:
+        // Filtramos usando las props que vienen del padre
+        const productosFiltrados = productos.filter((p) => p.id !== itemProducto.id);
+        setProductos(productosFiltrados);
+        
+        Swal.fire("Eliminado", "El producto ha sido borrado", "success");
+      }
+    });
+  };
+
   return (
-    <tr>
-      <td className="text-center">Fila</td>
-      <td>{itemProducto.nombreProducto}</td>
-      <td className="text-end">{itemProducto.precio}</td>
-      <td className="text-center">
-        <img src={itemProducto.imagen} className="img-thumbnail w-25" alt={itemProducto.imagen}/>
+    <>
+    <tr className="text-center">
+      <td>{fila}</td>
+      <td>${itemProducto.nombreProducto}</td>
+      <td>${itemProducto.precio}</td>
+      <td>
+        <img src={itemProducto.imagen} alt="imagen producto" />
       </td>
-      <td>{itemProducto.categoria}</td>
+      <td>${itemProducto.categoria}</td>
+      {/* <td>${ItemProducto.descripcion_breve}</td>
+      <td>${ItemProducto.descripcion_amplia}</td> */}
       <td className="text-center">
-        <Link className="me-lg-2 btn btn-warning" to={`/administrador/editar/`}>
-          <i className="bi bi-pencil-square"></i>
+        <Link className="btn btn-warning me-2" to={`editar/:id/${itemProducto.id}`}>
+        <i className="bi bi-pencil-square"></i>
         </Link>
-        <Button variant="danger">
-          <i className="bi bi-trash"></i>
+        <Button variant="danger" onClick={confirmarBorrado}>
+          <i className="bi bi-trash-fill"></i>
         </Button>
       </td>
     </tr>
-  );
-};
+    </>
+  )
+}
 
-export default ItemProducto;
+export default ItemProducto

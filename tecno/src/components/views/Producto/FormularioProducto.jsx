@@ -6,74 +6,56 @@ import { useEffect, useState } from "react";
 import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares";
 import ProductosPrueba from "../../../data/productosPrueba";
 import ItemProducto from "./ItemProducto";
+// import ListaProducto from "./ListaProducto";
 
 
-export const Productos = () => {
-  const [resgistros, setRegistros] = useState([])
-  
-  const [nombre, setNombre] = useState()
+export const FormularioProducto = ({titulo}) => {
 
-  const botonGuardar = (e) => {
-    e.prevenDefault();
-    const miObjeto = { id, nombre, precio, categoria, descripcion_breve, descripcion_amplia, imagen}
-    setRegistros([...resgistros, miObjeto]);
-    limpiarFormulario();
-  }
+const {
+  register,
+  handleSubmit,
+  reset,
+  formState: { errors },
+} = useForm();
 
-  const limpiarFormulario = () => {
-    setNombre("")
-    setPrecio()
-    setCategoria()
-    setDescripcion_breve()
-    setDescripcion_amplia()
-    setImagen()
-    document.getElementById("miformulario").reset();
-  }
+const [productos, setProductos] = useState(() => {
+  const productosGuardados = localStorage.getItem('productosKey') 
+  return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
+});
 
-  return {
+useEffect(() => {
+  localStorage.setItem('productosKey', JSON.stringify(productos));
+}, [productos]);
 
-  }
+const posteriorValidacion = (data) => {
+  const nuevoProducto = {...data, id: Date.now()};
+  setProductos ([...productos, nuevoProducto]);
+
+  reset()
+  Swal.fire ({
+    icon: 'success',
+    title: 'producto guardado',
+    showConfirmButton: false
+  })
 }
-    const FormularioProducto = () => {
 
-      const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-      } = useForm();
+const borrarProducto = (idProducto) => {
+  const productosFiltrados = productos.filter(p => p.id !== idProducto)
+  setProductos(productosFiltrados)
 
-      const tareasLocalStorage = JSON.parse(localStorage.getItem('productoKey')) || []
-      const [productos, setProductos] = useState(ProductosLocalStorage);
+}
 
-      useEffect (()=> {
-        localStorage.setItem('productosKey', JSON.stringify(productos))
-      }, [productos])
-
-      const posteriorValidacion = (data) => {
-
-        setProductos([...productos, data.productos])
-
-        reset()
-      }
-
-      const borrarProducto = (nombreProducto) => {
-        const productosFiltrados = productos.filter((ItemProducto) => ItemProducto !== nombreProducto)
-
-        setProductos(productosFiltrados)
-      }
-
-const FormularioProducto
-
-
-
+const editarProducto = ({productos , setProductos}) => {}
+}
 
 
   return (
+
+<>
     <section className="container mainSection">
       <h1 className="display-4 mt-5">{titulo}</h1>
       <hr />
-      <Form className="my-4" onSubmit={handleSubmit(onSubmit)}>
+      <Form className="my-4" onSubmit={handleSubmit(posteriorValidacion)}>
         <Form.Group className="mb-3" controlId="formNombreProducto">
           <Form.Label>Producto</Form.Label>
          <Form.Control type="text" placeholder="Ej: Juego" 
@@ -127,20 +109,20 @@ const FormularioProducto
           <Form.Label>Categoria*</Form.Label>
           <Form.Select
             {...register("categoria", {required: "Debe seleccionar una categoria",})}>
-              <option value="Accion"></option>
-              <option value="Aventura"></option>
-              <option value="Un jugador"></option>
-              <option value="Multijugador"></option>
-              <option value="Estrategia"></option>
-              <option value="Tierno"></option>
-              <option value="Shooter"></option>
-              <option value="Primera persona"></option>
-              <option value="Tercera Persona"></option>
-              <option value="Sandbox"></option>
-              <option value="Casual"></option>
-              <option value="Competitivo"></option>
-              <option value="Ciencia ficcion"></option>
-              <option value="Fantasia"></option>
+              <option value="Accion">Accion</option>
+              <option value="Aventuras">Aventuras</option>
+              <option value="Un jugador">Un jugador</option>
+              <option value="Multijugador">Multijugador</option>
+              <option value="Estrategia">Estrategia</option>
+              <option value="Tierno">Tierno</option>
+              <option value="Shooter">Shooter</option>
+              <option value="Primera persona">Primera persona</option>
+              <option value="Tercera Persona">Tercera persona</option>
+              <option value="Sandbox">Sandbox</option>
+              <option value="Casual">Casual</option>
+              <option value="Competitivo">Competitivo</option>
+              <option value="Ciencia ficcion">Ciencia ficcion</option>
+              <option value="Fantasia">Fantasia</option>
           </Form.Select>
           <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
         </Form.Group>
@@ -149,7 +131,8 @@ const FormularioProducto
           <Form.Control
             type="text"
             placeholder="Ej: juego de accion diviertete"
-            as="texttarea"
+            as="textarea"
+            rows={4}
             {...register("descripcion_breve", {
               required: "La descripcion es un dato obligatorio",
               minLength: {
@@ -185,12 +168,14 @@ const FormularioProducto
           />
           <Form.Text className="text-danger">{errors.descripcion_amplia?.message}</Form.Text>
         </Form.Group>
-        <Button type="submit" variant="succes">
+        <Button type="submit" variant="success">
           Guardar
         </Button>
       </Form>
     </section>
-  )
+
+</>
+)
 }
 
 export default FormularioProducto
