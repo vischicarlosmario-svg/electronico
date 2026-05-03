@@ -1,3 +1,4 @@
+
 import { Container, Row, Col, Card, Button } from "react-bootstrap"
 import CardJuego from "../Home/cards/CardJuego";
 import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares.jsx";
