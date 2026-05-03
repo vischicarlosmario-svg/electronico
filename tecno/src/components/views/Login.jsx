@@ -45,7 +45,7 @@ const Login = ({ setUsuarioLogueado }) => {
 
   return (
     <>
-      <Card className=" shadow p-3 mb-5 bg-body rounded card-login">
+      <Card className="shadow p-3 mb-5 bg-body rounded card-login">
         <Row xs={1} md={2}>
           <Col>
             <Card.Body>
@@ -97,6 +97,13 @@ const Login = ({ setUsuarioLogueado }) => {
                 </Button>
               </Form>
             </Card.Body>
+          </Col>
+          <Col>
+            <img
+              src= "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1749053861"
+              alt="Counter Strike 2"
+              className="img-login rounded-3 w-90"
+            />
           </Col>
         </Row>
       </Card>
