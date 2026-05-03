@@ -35,7 +35,11 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/detalle/:id" element={<DetalleDeProducto/>}/>
             <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
+<<<<<<< HEAD
             <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado}/>}>
+=======
+            <Route path="/administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado}/>}>
+>>>>>>> 60c536bf3b4721abd7db3709d9f58132a700f730
               <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>}/>
               <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>
               <Route path="editar/:id" element={<FormularioProducto titulo="Editar Producto"></FormularioProducto>}/>

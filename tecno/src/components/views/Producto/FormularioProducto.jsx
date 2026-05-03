@@ -176,8 +176,10 @@ const editarProducto = ({productos , setProductos}) => {
         </Button>
       </Form>
     </section>
-
 </>
-)
-}
+  );
+};
+
 export default FormularioProducto
+
+
