@@ -9,12 +9,12 @@ const Footer = () => {
         <ul className="list-group list-group-horizontal bg-warning py-4 justify-content-center">
           <li href="#" className="list-group-item bg-warning text-dark">AVENTURA</li>
           <li href="#" className="list-group-item bg-warning text-dark">TERROR</li>
-          <li href="#" className="list-group-item bg-warning text-dark">FORMULARIO 1</li>
+          <li href="#" className="list-group-item bg-warning text-dark">FORMULA 1</li>
         </ul>
         <ul className="list-group list-group-horizontal bg-warning py-4 justify-content-center">
           <li href="#" className="list-group-item bg-warning text-dark">COMBATE</li>
           <li href="#" className="list-group-item bg-warning text-dark">DEPORTES</li>
-          <li href="#" className="list-group-item bg-warning text-dark">FORMULARIO 1</li>
+          <li href="#" className="list-group-item bg-warning text-dark">RECREATIVO</li>
         </ul>
         <ul className="list-group list-group-horizontal bg-warning py-4 justify-content-center">
           <li href="#" className="list-group-item bg-warning text-dark">HISTORIA</li>
