@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares";
 import ProductosPrueba from "../../../data/productosPrueba";
 import ItemProducto from "./ItemProducto";
-// import ListaProducto from "./ListaProducto";
+import ListaProducto from "./EditarProducto";
 
 
 export const FormularioProducto = ({ titulo }) => {
@@ -65,12 +65,12 @@ export const FormularioProducto = ({ titulo }) => {
               {...register("nombreProducto", {
                 required: "El nombre del producto es un dato obligatorio",
                 minLength: {
-                  value: 50,
-                  message: "El nombre del producto debe tener al menos 50 caracteres",
+                  value: 1,
+                  message: "El nombre del producto debe tener al menos 1 caracteres",
                 },
                 maxLength: {
-                  value: 100,
-                  message: "El nombre del producto debe tener como maximo 100 caracteres",
+                  value: 50,
+                  message: "El nombre del producto debe tener como maximo 50 caracteres",
                 }
               })} />
             <Form.Text className="text-danger">{errors.nombreProducto?.message}</Form.Text>
@@ -139,12 +139,12 @@ export const FormularioProducto = ({ titulo }) => {
               {...register("descripcion_breve", {
                 required: "La descripcion es un dato obligatorio",
                 minLength: {
-                  value: 100,
-                  message: "La descripcion debe tener al menos 5 caracteres",
+                  value: 50,
+                  message: "La descripcion debe tener al menos 50 caracteres",
                 },
                 maxLength: {
-                  value: 500,
-                  message: "La descripcion debe tener como maximo 500 caracteres"
+                  value: 150,
+                  message: "La descripcion debe tener como maximo 150 caracteres"
                 }
               })}
             />
@@ -160,8 +160,8 @@ export const FormularioProducto = ({ titulo }) => {
               {...register("descripcion_amplia", {
                 required: "La descripcion amplia es un dato obligatorio",
                 minLength: {
-                  value: 300,
-                  message: "La descripcion debe tener almenos 300 caracteres"
+                  value: 250,
+                  message: "La descripcion debe tener almenos 250 caracteres"
                 },
                 maxLength: {
                   value: 500,

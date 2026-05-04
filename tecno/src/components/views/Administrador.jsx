@@ -17,11 +17,11 @@ const Administrador = ({ setProductos, productos }) => {
         <Link className="btn btn-primary me-2" to="crear">
           Crear
         </Link>
-        <Button variant="info" className="text-light" onClick={cargarProductosPrueba}><i className="bi bi-database-fill-up"></i></Button>
+        <Button variant="info" className="text-light" onClick={cargarProductosPrueba}>lista</Button>
       </div>
       <hr />
-      <Table responsive striped bordered hover variant="dark">
-        <thead  className="content">
+      <Table responsive bordered hover variant="dark" className="container">
+        <thead>
           <tr className="text-center">
             <th>#</th>
             <th>Producto</th>

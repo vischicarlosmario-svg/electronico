@@ -11,6 +11,7 @@ import { useEffect, useState } from "react"
 import ProtectorAdmin from "./components/routes/ProtectorAdmin"
 import './App.css'
 import ProductosPrueba from "./data/productosPrueba.jsx"
+import EditarProducto from "./components/views/Producto/EditarProducto.jsx"
 
 function App() {
   const sesionUsuario = JSON.parse(sessionStorage.getItem("usuarioKey")) || false;
@@ -38,7 +39,7 @@ function App() {
             <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado}/>}>
               <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>}/>
               <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>
-              <Route path="editar/:id" element={<FormularioProducto titulo="Editar Producto"></FormularioProducto>}/>
+              <Route path="editar/:id" element={<EditarProducto titulo="Editar Producto" productos={productos} setProductos={setProductos}></EditarProducto>}/>
             </Route>
             <Route path="*" element={<Error404></Error404>}/>
           </Routes>

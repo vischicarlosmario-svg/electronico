@@ -32,7 +32,7 @@ const ItemProducto = ({ itemProducto, setProductos, borrarProducto, fila, produc
         </td>
         <td>{itemProducto.categoria}</td>
         <td alt="Accion" className="justify-content-between align-items-center">{itemProducto.accion}
-          <Link className="btn btn-warning" to={`editar/:id/${itemProducto.id}`}>
+          <Link className="btn btn-warning" to={`editar/${itemProducto.id}`}>
             Editar
           </Link>
           <Button variant="danger" onClick={confirmarBorrado}>
