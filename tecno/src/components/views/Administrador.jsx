@@ -28,7 +28,7 @@ const Administrador = ({ setProductos, productos }) => {
             <th>Precio</th>
             <th>Imagen del producto</th>
             <th>Categoria</th>
-            <th>Accion</th>
+            <th>-</th>
           </tr>
         </thead>
         <tbody>
