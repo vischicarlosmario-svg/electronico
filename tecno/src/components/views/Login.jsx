@@ -9,7 +9,7 @@ const Login = ({ setUsuarioLogueado }) => {
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const handlePassWord = () => {setShowPassword(!showPassword)}
+  const handlePassWord = () => { setShowPassword(!showPassword) }
 
   const {
     register,
@@ -72,7 +72,7 @@ const Login = ({ setUsuarioLogueado }) => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Contraseña:</Form.Label>
                   <Form.Control
-                    type={showPassword === false ? 'password': 'text'}
+                    type={showPassword === false ? 'password' : 'text'}
                     placeholder="Ingresa una contraseña"
                     {...register("password", {
                       required: "La contraseña es un dato obligatorio",
@@ -101,7 +101,7 @@ const Login = ({ setUsuarioLogueado }) => {
           </Col>
           <Col>
             <img
-              src= "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1749053861"
+              src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1749053861"
               alt="Counter Strike 2"
               className="img-login rounded-3 w-90"
             />

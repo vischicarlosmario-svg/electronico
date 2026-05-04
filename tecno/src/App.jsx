@@ -33,15 +33,15 @@ function App() {
         <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
         <main>
           <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/detalle/:id" element={<DetalleDeProducto/>}/>
-            <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
-            <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado}/>}>
-              <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>}/>
-              <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>
-              <Route path="editar/:id" element={<EditarProducto titulo="Editar Producto" productos={productos} setProductos={setProductos}></EditarProducto>}/>
+            <Route path="/" element={<Home />} />
+            <Route path="/detalle/:id" element={<DetalleDeProducto />} />
+            <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
+            <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado} />}>
+              <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>} />
+              <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>} />
+              <Route path="editar/:id" element={<EditarProducto titulo="Editar Producto" productos={productos} setProductos={setProductos}></EditarProducto>} />
             </Route>
-            <Route path="*" element={<Error404></Error404>}/>
+            <Route path="*" element={<Error404></Error404>} />
           </Routes>
         </main>
         <Footer></Footer>
