@@ -49,12 +49,12 @@ return (
          {...register("nombreProducto", {
           required: "El nombre del producto es un dato obligatorio",
           minLength: {
-            value: 50,
-            message: "El nombre del producto debe tener al menos 50 caracteres",
+            value: 1,
+            message: "El nombre del producto debe tener al menos 1 caracteres",
           },
           maxLength: {
-            value: 100,
-            message: "El nombre del producto debe tener como maximo 100 caracteres",
+            value: 50,
+            message: "El nombre del producto debe tener como maximo 50 caracteres",
           }
          })}/>
          <Form.Text className="text-danger">{errors.nombreProducto?.message}</Form.Text>
@@ -123,11 +123,11 @@ return (
             {...register("descripcion_breve", {
               required: "La descripcion es un dato obligatorio",
               minLength: {
-                value: 100,
-                message: "La descripcion debe tener al menos 5 caracteres",
+                value: 50,
+                message: "La descripcion debe tener al menos 50 caracteres",
               },
               maxLength: {
-                value: 500,
+                value: 150,
                 message: "La descripcion debe tener como maximo 500 caracteres"
               }
             })}
@@ -145,7 +145,7 @@ return (
             required: "La descripcion amplia es un dato obligatorio",
             minLength: {
               value: 300,
-              message: "La descripcion debe tener almenos 300 caracteres"
+              message: "La descripcion debe tener almenos 100 caracteres"
             },
             maxLength: {
               value: 500,
