@@ -12,7 +12,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado}) => {
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand as={Link} to={'/'} className="fs-2">Crud Food</Navbar.Brand>
+        <Navbar.Brand as={Link} to={'/'} className="fs-2">GAME-OVER!!</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
