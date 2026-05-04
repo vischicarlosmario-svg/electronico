@@ -5,7 +5,7 @@ import productosPrueba from "../../data/productosPrueba"
 import Swal from "sweetalert2"
 import { useEffect } from "react"
 
-const Administrador = ({setProductos, productos}) => {
+const Administrador = ({ setProductos, productos }) => {
 
   const cargarProductosPrueba = () => {
     setProductos(productosPrueba)
@@ -14,30 +14,29 @@ const Administrador = ({setProductos, productos}) => {
     <section className="container">
       <div className="justify-content-between align-items-center mt-5">
         <h1 className="display-4">Productos disponibles</h1>
-        
-          <Link className="btn btn-primary me-2" to="crear">
-            <i className="bi bi-file-earmark-plus"></i> Crear
-          </Link>
-          <Button variant="info" className="text-light" onClick={cargarProductosPrueba}><i className="bi bi-database-fill-up"></i></Button>
-        
-        </div>
-        <hr />
-        <Table responsive striped bordered hover variant="dark">
-          <thead>
-            <tr className="text-center">
-              <th>#</th>
-              <th>Producto</th>
-              <th>Precio</th>
-              <th>Imagen del producto</th>
-              <th>Categoria</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Array.isArray(productos) && productos.length > 0 && (
-              productos.map((itemProducto, indice) => <ItemProducto itemProducto={itemProducto} key={itemProducto.id || indice} fila={indice + 1} setProductos={setProductos} productos={productos}></ItemProducto>)
-            )}
-          </tbody>
-        </Table>
+        <Link className="btn btn-primary me-2" to="crear">
+          Crear
+        </Link>
+        <Button variant="info" className="text-light" onClick={cargarProductosPrueba}><i className="bi bi-database-fill-up"></i></Button>
+      </div>
+      <hr />
+      <Table responsive striped bordered hover variant="dark">
+        <thead  className="content">
+          <tr className="text-center">
+            <th>#</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Imagen del producto</th>
+            <th>Categoria</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Array.isArray(productos) && productos.length > 0 && (
+            productos.map((itemProducto, indice) => <ItemProducto itemProducto={itemProducto} key={itemProducto.id || indice} fila={indice + 1} setProductos={setProductos} productos={productos}></ItemProducto>)
+          )}
+        </tbody>
+      </Table>
     </section>
   )
 }
