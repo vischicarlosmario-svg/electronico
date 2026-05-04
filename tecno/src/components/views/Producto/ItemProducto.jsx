@@ -25,12 +25,12 @@ const ItemProducto = ({itemProducto, setProductos, borrarProducto, fila, product
     <>
     <tr className="text-center">
       <td>{fila}</td>
-      <td>${itemProducto.nombreProducto}</td>
-      <td>${itemProducto.precio}</td>
+      <td>{itemProducto.nombreProducto}</td>
+      <td>{itemProducto.precio}</td>
       <td>
         <img src={itemProducto.imagen} alt="imagen producto" />
       </td>
-      <td>${itemProducto.categoria}</td>
+      <td>{itemProducto.categoria}</td>
       {/* <td>${ItemProducto.descripcion_breve}</td>
       <td>${ItemProducto.descripcion_amplia}</td> */}
       <td className="text-center">
