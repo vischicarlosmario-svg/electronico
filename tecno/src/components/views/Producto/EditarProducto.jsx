@@ -1,64 +1,48 @@
-import { Form, Button } from "react-bootstrap";
-import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
-import { useNavigate, useParams } from "react-router";
-import { useEffect, useState } from "react";
-import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares";
-import ProductosPrueba from "../../../data/productosPrueba";
-import ItemProducto from "./ItemProducto";
-import ListaProducto from "./EditarProducto";
+import { Button, Form } from "react-bootstrap"
+import { Link } from "react-router"
+import Swal from "sweetalert2"
+import { useEffect } from "react"
+import { useForm } from "react-hook-form"
+import { useParams, useNavigate } from "react-router"
 
+const EditarProducto = ({ productos, setProductos }) => {
+    const { id } = useParams();
+    const navegacion = useNavigate()
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm()
 
-export const FormularioProducto = ({titulo}) => {
+    useEffect(() => {
+        const productoBuscado = productos.find((p) => p.id == id);
 
-const {
-  register,
-  handleSubmit,
-  reset,
-  formState: { errors },
-} = useForm();
+        if (productoBuscado) {
 
-const [productos, setProductos] = useState(() => {
-  const productosGuardados = localStorage.getItem('productosKey') 
-  return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
-});
+            setValue("nombreProducto", productoBuscado.nombreProducto);
+            setValue("precio", productoBuscado.precio);
+            setValue("imagen", productoBuscado.imagen);
+            setValue("categoria", productoBuscado.categoria);
+            setValue("descripcion_breve", productoBuscado.descripcion_breve);
+            setValue("descripcion_amplia", productoBuscado.descripcion_amplia);
+        }
+    }, [id, productos, setValue]);
 
-useEffect(() => {
-  localStorage.setItem('productosKey', JSON.stringify(productos));
-}, [productos]);
+    const onSubmit = (datosEditados) => {
+        const productosActualizados = productos.map((p) => p.id == id ? { ...datosEditados, id: p.id } : p
+    );
 
-const posteriorValidacion = (data) => {
-  const nuevoProducto = {...data, id: Date.now()};
-  setProductos ([...productos, nuevoProducto]);
-
-  reset()
-  Swal.fire ({
-    icon: 'success',
-    title: 'producto guardado',
-    showConfirmButton: false
-  })
-}
-
-const borrarProducto = (idProducto) => {
-  const productosFiltrados = productos.filter(p => p.id !== idProducto)
-  setProductos(productosFiltrados)
-
-}
-
-const editarProducto = ({productos , setProductos}) => {
-  const productosFiltrados = productos.map(p => p.id !== idProducto)
-  setProductos(productosFiltrados)
-}
-
-
-
-  return (
-
-<>
-    <section className="container mainSection">
-      <h1 className="display-4 mt-5">{titulo}</h1>
+    setProductos(productosActualizados);
+    Swal.fire({
+        icon: "success",
+        title: "Producto actualizado",
+        showConfirmButton: false,
+    })
+    navegacion("/administrador")
+    }
+    
+return (
+   <>
+   <section className="container mainSection">
+      <h1 className="display-4 mt-5">"Editar Productos"</h1>
       <hr />
-      <Form className="my-4" onSubmit={handleSubmit(posteriorValidacion)}>
+      <Form className="my-4" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreProducto">
           <Form.Label>Producto</Form.Label>
          <Form.Control type="text" placeholder="Ej: Juego" 
@@ -176,10 +160,9 @@ const editarProducto = ({productos , setProductos}) => {
         </Button>
       </Form>
     </section>
-</>
-  );
-};
+   </>
+)    
+}
 
-export default FormularioProducto
-
+export default EditarProducto
 

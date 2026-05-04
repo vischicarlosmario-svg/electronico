@@ -34,7 +34,7 @@ const ItemProducto = ({itemProducto, setProductos, borrarProducto, fila, product
       {/* <td>${ItemProducto.descripcion_breve}</td>
       <td>${ItemProducto.descripcion_amplia}</td> */}
       <td className="text-center">
-        <Link className="btn btn-warning me-2" to={`editar/:id/${itemProducto.id}`}>
+        <Link className="btn btn-warning me-2" to={`editar/${itemProducto.id}`}>
         <i className="bi bi-pencil-square"></i>
         </Link>
         <Button variant="danger" onClick={confirmarBorrado}>
