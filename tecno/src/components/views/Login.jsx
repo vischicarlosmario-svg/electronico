@@ -23,15 +23,9 @@ const Login = ({ setUsuarioLogueado }) => {
     if (
       data.email === import.meta.env.VITE_API_EMAIL &&
       data.password === import.meta.env.VITE_API_PASSWORD
-<<<<<<< HEAD
-    ) 
-    {
-      console.log('Aqui logueo al usuario')
-=======
+
     ) {
       console.log('aqui logueo al usuario');
->>>>>>> 60c536bf3b4721abd7db3709d9f58132a700f730
-      setUsuarioLogueado(true);
       //redireccionar a la pagina del administrador
       Swal.fire({
         title: "Bienvenido Administrador",
@@ -71,11 +65,8 @@ const Login = ({ setUsuarioLogueado }) => {
                     })}
                   />
                   <Form.Text className="text-danger">
-<<<<<<< HEAD
                     {errors.email?.message}
-=======
-                    {errors.mail?.message}
->>>>>>> 60c536bf3b4721abd7db3709d9f58132a700f730
+
                   </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -107,8 +98,6 @@ const Login = ({ setUsuarioLogueado }) => {
                 </Button>
               </Form>
             </Card.Body>
-<<<<<<< HEAD
-=======
           </Col>
           <Col>
             <img
@@ -116,7 +105,6 @@ const Login = ({ setUsuarioLogueado }) => {
               alt="Counter Strike 2"
               className="img-login rounded-3 w-90"
             />
->>>>>>> 60c536bf3b4721abd7db3709d9f58132a700f730
           </Col>
         </Row>
       </Card>
