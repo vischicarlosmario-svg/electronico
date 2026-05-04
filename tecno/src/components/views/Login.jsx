@@ -25,7 +25,6 @@ const Login = ({ setUsuarioLogueado }) => {
       data.password === import.meta.env.VITE_API_PASSWORD
 
     ) {
-      console.log('aqui logueo al usuario');
       //redireccionar a la pagina del administrador
       Swal.fire({
         title: "Bienvenido Administrador",
