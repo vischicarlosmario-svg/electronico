@@ -38,7 +38,7 @@ export const FormularioProducto = ({ titulo }) => {
     })
   }
 
-  const borrarProducto = (idProducto) => {
+  const confirmarBorrado = (idProducto) => {
     const productosFiltrados = productos.filter(p => p.id !== idProducto)
     setProductos(productosFiltrados)
 

@@ -12,6 +12,7 @@ import ProtectorAdmin from "./components/routes/ProtectorAdmin"
 import './App.css'
 import ProductosPrueba from "./data/productosPrueba.jsx"
 import EditarProducto from "./components/views/Producto/EditarProducto.jsx"
+import Registro from "./components/views/Registro.jsx"
 
 function App() {
   const sesionUsuario = JSON.parse(localStorage.getItem("usuarioKey")) || false;
