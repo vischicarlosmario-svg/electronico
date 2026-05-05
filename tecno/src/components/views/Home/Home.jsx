@@ -10,15 +10,29 @@ const Home = () => {
 
   return (
     <>
-    <div className="container">
-      <Carrousel></Carrousel>
-    </div>
-    <div className="container-fluid">
-      <Novedades></Novedades>
-    </div>
-    <div>
-      <JuegosPopulares className=""></JuegosPopulares>
-    </div>
+      <section className="section">
+        <div className="container">
+          <Carrousel />
+        </div>
+      </section>
+
+    <section className="section">
+        <h2 className="section-title">Novedades</h2>
+        <div className="container">
+          <div className="section-content">
+            <Novedades />
+          </div>
+        </div>
+      </section>
+
+    <section className="section">
+        <h2 className="section-title">Juegos Populares</h2>
+        <div className="container">
+          <div className="section-content">
+            <JuegosPopulares />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
