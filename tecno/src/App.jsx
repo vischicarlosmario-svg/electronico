@@ -14,7 +14,7 @@ import ProductosPrueba from "./data/productosPrueba.jsx"
 import EditarProducto from "./components/views/Producto/EditarProducto.jsx"
 
 function App() {
-  const sesionUsuario = JSON.parse(sessionStorage.getItem("usuarioKey")) || false;
+  const sesionUsuario = JSON.parse(localStorage.getItem("usuarioKey")) || false;
   const productosGuardados = JSON.parse(localStorage.getItem('productoKey')) || [];
   const [usuarioLogueado, setUsuarioLogueado] = useState(sesionUsuario);
 
@@ -23,6 +23,8 @@ function App() {
     return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
   });
 
+  console.log("estado de productos", productos.length)
+  console.log("Estado del usuario", usuarioLogueado)
   // useEffect(() => {
   //   localStorage.setItem('productosKey', JSON.stringify(productos))
   // }, [productos]);
@@ -33,15 +35,15 @@ function App() {
         <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
         <main>
           <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/detalle/:id" element={<DetalleDeProducto/>}/>
-            <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
-            <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado}/>}>
-              <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>}/>
-              <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>
-              <Route path="editar/:id" element={<EditarProducto titulo="Editar Producto" productos={productos} setProductos={setProductos}></EditarProducto>}/>
+            <Route path="/" element={<Home />} />
+            <Route path="/detalle/:id" element={<DetalleDeProducto />} />
+            <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
+            <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado} />}>
+              <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>} />
+              <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>} />
+              <Route path="editar/:id" element={<EditarProducto titulo="Editar Producto" productos={productos} setProductos={setProductos}></EditarProducto>} />
             </Route>
-            <Route path="*" element={<Error404></Error404>}/>
+            <Route path="*" element={<Error404></Error404>} />
           </Routes>
         </main>
         <Footer></Footer>
