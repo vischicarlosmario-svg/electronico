@@ -24,13 +24,8 @@ function App() {
     return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
   });
 
-
-  
   console.log("estado de productos", productos.length)
   console.log("Estado del usuario", usuarioLogueado)
-  // useEffect(() => {
-  //   localStorage.setItem('productosKey', JSON.stringify(productos))
-  // }, [productos]);
 
   return (
     <>
@@ -41,7 +36,7 @@ function App() {
             <Route path="/" element={<Home/>}/>
             <Route path="/detalle/:id" element={<DetalleDeProducto/>}/>
             <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
-            <Route path = " /registro" element={<Registro usuario={usuarios}/>} ></Route>
+            {/* <Route path = " /registro" element={<Registro usuario={usuarios}/>} ></Route> */}
             <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado}/>}>
               <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>}/>
               <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>

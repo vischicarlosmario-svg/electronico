@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares";
 import ItemProducto from "./ItemProducto";
 import EditarProducto from "./EditarProducto";
+import ProductosPrueba from "../../../data/ProductosPrueba";
 
 
 export const FormularioProducto = ({ titulo }) => {
