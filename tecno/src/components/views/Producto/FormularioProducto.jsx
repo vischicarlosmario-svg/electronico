@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares";
 import ItemProducto from "./ItemProducto";
-import ListaProducto from "./EditarProducto";
+import EditarProducto from "./EditarProducto";
 
 
 export const FormularioProducto = ({ titulo }) => {
@@ -44,7 +44,7 @@ export const FormularioProducto = ({ titulo }) => {
 
   }
 
-  const editarProducto = ({ productos, setProductos }) => {
+  const EditarProducto = ({ productos, setProductos }) => {
     const productosFiltrados = productos.map(p => p.id !== idProducto)
     setProductos(productosFiltrados)
   }
