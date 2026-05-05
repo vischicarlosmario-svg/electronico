@@ -14,7 +14,7 @@ import ProductosPrueba from "./data/productosPrueba.jsx"
 import EditarProducto from "./components/views/Producto/EditarProducto.jsx"
 
 function App() {
-  const sesionUsuario = JSON.parse(sessionStorage.getItem("usuarioKey")) || false;
+  const sesionUsuario = JSON.parse(localStorage.getItem("usuarioKey")) || false;
   const productosGuardados = JSON.parse(localStorage.getItem('productoKey')) || [];
   const [usuarioLogueado, setUsuarioLogueado] = useState(sesionUsuario);
 
@@ -23,6 +23,8 @@ function App() {
     return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
   });
 
+  console.log("estado de productos", productos.length)
+  console.log("Estado del usuario", usuarioLogueado)
   // useEffect(() => {
   //   localStorage.setItem('productosKey', JSON.stringify(productos))
   // }, [productos]);
