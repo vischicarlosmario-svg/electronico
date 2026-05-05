@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares";
-import ProductosPrueba from "../../../data/productosPrueba";
+// import ProductosPrueba from "../../../data/productosPrueba";
 import ItemProducto from "./ItemProducto";
 import ListaProducto from "./EditarProducto";
 

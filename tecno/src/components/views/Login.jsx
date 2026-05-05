@@ -27,6 +27,8 @@ const Login = ({ setUsuarioLogueado }) => {
     ) {
       console.log('aqui logueo al usuario');
       setUsuarioLogueado(true);
+
+      localStorage.setItem("usuarioKey", JSON.stringify(true))
       //redireccionar a la pagina del administrador
       Swal.fire({
         title: "Bienvenido Administrador",
