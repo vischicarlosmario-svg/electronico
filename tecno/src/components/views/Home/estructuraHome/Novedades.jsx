@@ -9,7 +9,6 @@ const Novedades = ({ nombreProducto, precio, imagen }) => {
     <>
       <div className="novedades container-fluid">
         <div className="juegosTitulo">
-          <h2 className="">Novedades</h2>
           <div className="row justify-content-center ">
             {ProductosPrueba.slice(6, 8).map((juego) => (
               <div className="col-6 col-md-4 col-lg-5" key={juego.id}>
