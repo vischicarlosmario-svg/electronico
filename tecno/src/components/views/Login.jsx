@@ -21,21 +21,26 @@ const Login = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate()
 
   const onSubmit = (data) => {
-    const usuariosGuardados = JSON.parse(localStorage.getItem("usuarios")) || [];
-    const Existe = usuariosGuardados.find(
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const usuarioValidado = usuarios.find(
       (u) => u.email === data.email && u.password === data.password
     );
     const esAdmin = data.email === import.meta.env.VITE_API_EMAIL && data.password === import.meta.env.VITE_API_PASSWORD;  
 
-    if (existe || esAdmin) {
-      setUsuarioLogueado(true);
-      localStorage.setItem("usuarioKey", JSON.stringify(true));
+    if (usuarioValidado || esAdmin) {
+      const infoUsuario = {
+        email: data.email,
+        role: esAdmin ? "admin" : "user"
+      };
+
+      setUsuarioLogueado(infoUsuario);
+      localStorage.setItem("usuarioKey", JSON.stringify(infoUsuario));
       Swal.fire({
         title: "Bienvenido Administrador",
         text: "Iniciaste sesion correctamente",
         icon: "success",
       });
-      navegacion("/Administrador");
+      navegacion(esAdmin ? "/Administrador" : "/");
     } else {
       Swal.fire({
         title: "Ocurrio un error",
