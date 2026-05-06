@@ -2,11 +2,9 @@ const FiltroCategorias = ({ setCategoriaSeleccionada }) => {
   const categorias = [
     "Todos",
     "Accion",
-    "Aventura",
     "Shooter",
-    "Survival",
-    "Sandbox",
-    "Ciencia Ficcion"
+    "Multijugador",
+    "Sandbox"
   ];
 
   return (

@@ -7,7 +7,6 @@ import FiltroCategorias from "../FiltroCategorias";
 
 const Home = () => {
 
-  // 🎯 estado del filtro
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("Todos");
 
   return (
@@ -18,7 +17,7 @@ const Home = () => {
         </div>
       </section>
 
-    <section className="section">
+      <section className="section">
         <h2 className="section-title">Novedades</h2>
         <div className="container">
           <div className="section-content">
@@ -27,11 +26,15 @@ const Home = () => {
         </div>
       </section>
 
-    <section className="section">
+      <section className="section">
         <h2 className="section-title">Juegos Populares</h2>
+
+        {/* 🔥 FILTRO */}
+        <FiltroCategorias setCategoriaSeleccionada={setCategoriaSeleccionada} />
+
         <div className="container">
           <div className="section-content">
-            <JuegosPopulares />
+            <JuegosPopulares categoriaSeleccionada={categoriaSeleccionada} />
           </div>
         </div>
       </section>
