@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useState } from "react"
+import Registro from "./Registro";
 
 const Login = ({ setUsuarioLogueado }) => {
 
@@ -20,21 +21,21 @@ const Login = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate()
 
   const onSubmit = (data) => {
-    if (
-      data.email === import.meta.env.VITE_API_EMAIL &&
-      data.password === import.meta.env.VITE_API_PASSWORD
+    const usuariosGuardados = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const Existe = usuariosGuardados.find(
+      (u) => u.email === data.email && u.password === data.password
+    );
+    const esAdmin = data.email === import.meta.env.VITE_API_EMAIL && data.password === import.meta.env.VITE_API_PASSWORD;  
 
-    ) {
+    if (existe || esAdmin) {
       setUsuarioLogueado(true);
-
-      localStorage.setItem("usuarioKey", JSON.stringify(true))
-      //redireccionar a la pagina del administrador
+      localStorage.setItem("usuarioKey", JSON.stringify(true));
       Swal.fire({
         title: "Bienvenido Administrador",
         text: "Iniciaste sesion correctamente",
         icon: "success",
       });
-      navegacion("/Administrador")
+      navegacion("/Administrador");
     } else {
       Swal.fire({
         title: "Ocurrio un error",
@@ -44,6 +45,32 @@ const Login = ({ setUsuarioLogueado }) => {
     }
 
   }
+
+  // const onSubmit = (data) => {
+  //   if (
+  //     data.email === import.meta.env.VITE_API_EMAIL &&
+  //     data.password === import.meta.env.VITE_API_PASSWORD
+
+  //   ) {
+  //     setUsuarioLogueado(true);
+
+  //     localStorage.setItem("usuarioKey", JSON.stringify(true))
+  //     //redireccionar a la pagina del administrador
+  //     Swal.fire({
+  //       title: "Bienvenido Administrador",
+  //       text: "Iniciaste sesion correctamente",
+  //       icon: "success",
+  //     });
+  //     navegacion("/Administrador")
+  //   } else {
+  //     Swal.fire({
+  //       title: "Ocurrio un error",
+  //       text: "Credenciales incorrectas",
+  //       icon: "error",
+  //     });
+  //   }
+
+  // }
 
   return (
     <>

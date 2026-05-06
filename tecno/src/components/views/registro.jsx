@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 const Registro = () => {
+  console.log(Registro,length)
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
