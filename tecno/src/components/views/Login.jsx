@@ -38,7 +38,7 @@ const Login = ({ setUsuarioLogueado }) => {
 
 
       setUsuarioLogueado(infoUsuario);
-      localStorage.setItem("usuariosKey", JSON.stringify(infoUsuario));
+      localStorage.setItem("usuarioKey", JSON.stringify(infoUsuario));
       Swal.fire({
         title: esAdmin ? "Bienvenido Administrador" : `hola, ${nombre}`,
         text: "Iniciaste sesion correctamente",
