@@ -41,7 +41,7 @@ function App() {
               <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>
               <Route path="editar/:id" element={<EditarProducto titulo="Editar Producto" productos={productos} setProductos={setProductos}></EditarProducto>}/>
             </Route>
-            <Route path="*" element={<Error404></Error404>}/>
+            <Route path="*" element={<Error404></Error404>} />
           </Routes>
         </main>
         <Footer></Footer>
