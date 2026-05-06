@@ -4,9 +4,9 @@ import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
 import JuegosPopulares from "../Home/estructuraHome/JuegosPopulares";
-import ProductosPrueba from "../../../data/productosPrueba";
 import ItemProducto from "./ItemProducto";
-import ListaProducto from "./EditarProducto";
+import EditarProducto from "./EditarProducto";
+import ProductosPrueba from "../../../data/ProductosPrueba";
 
 
 export const FormularioProducto = ({ titulo }) => {
@@ -39,13 +39,13 @@ export const FormularioProducto = ({ titulo }) => {
     })
   }
 
-  const borrarProducto = (idProducto) => {
+  const confirmarBorrado = (idProducto) => {
     const productosFiltrados = productos.filter(p => p.id !== idProducto)
     setProductos(productosFiltrados)
 
   }
 
-  const editarProducto = ({ productos, setProductos }) => {
+  const EditarProducto = ({ productos, setProductos }) => {
     const productosFiltrados = productos.map(p => p.id !== idProducto)
     setProductos(productosFiltrados)
   }

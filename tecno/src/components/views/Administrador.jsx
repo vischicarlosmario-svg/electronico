@@ -1,14 +1,16 @@
 import { Button, Table } from "react-bootstrap"
 import { Link } from "react-router"
 import ItemProducto from "./Producto/ItemProducto"
-import productosPrueba from "../../data/productosPrueba"
 import Swal from "sweetalert2"
 import { useEffect } from "react"
 
 const Administrador = ({ setProductos, productos }) => {
+  console.log("productos recibidos", productos?.length)
 
   const cargarProductosPrueba = () => {
     setProductos(productosPrueba)
+
+  
   }
   return (
     <section className="container">
@@ -17,7 +19,6 @@ const Administrador = ({ setProductos, productos }) => {
         <Link className="btn btn-primary me-2" to="crear">
           Crear
         </Link>
-        <Button variant="info" className="text-light" onClick={cargarProductosPrueba}>lista</Button>
       </div>
       <hr />
       <Table responsive bordered hover variant="dark" className="container">
