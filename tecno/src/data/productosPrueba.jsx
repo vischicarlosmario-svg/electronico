@@ -20,7 +20,7 @@ const ProductosPrueba = [
     {
         id: "3",
         nombreProducto: "Diablo IV",
-        precio: "$39,99 USD",
+        precio: "$39.99 USD",
         descripcion_breve: "Únete a la lucha por Santuario en Diablo® IV, la mejor aventura de rol y acción. Vive la campaña aclamada por la crítica y el nuevo contenido de temporada",
         descripcion_amplia: "Diablo® IV es la experiencia RPG de acción definitiva con infinidad de males para asesinar, gran cantidad de habilidades para dominar, calabozos de pesadilla y botín legendario. Embárcate en la campaña en solitario o con amigos, donde conocerás personajes memorables a lo largo de una historia apasionante en un mundo oscuro y hermoso. También podrás explorar un juego avanzado en expansión: lucha contra jefes icónicos para obtener botín poderoso, resiste la embestida inminente del Infierno en las Mareas Infernales, domina la forja para crear armas superiores y haz progresar a personajes poderosos con juego cruzado y progresión cruzada en todas las plataformas disponibles.",
         categoria: "Sandbox, Aventuras, Casual, Multijugador, Un jugador",
