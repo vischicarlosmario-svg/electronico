@@ -1,12 +1,15 @@
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router";
+import Login from "../views/Login";
 
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
   const logout = () => {
     setUsuarioLogueado(false);
+    localStorage.removeItem("usuarioKey");
     navegacion("/");
+    
   };
 
   return (
