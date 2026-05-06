@@ -2,9 +2,9 @@
 import { Navigate, Outlet } from "react-router"
 
 
-const ProtectorAdmin = ({usuarioLogueado}) => {
+const ProtectorAdmin = ({ children, usuarioLogueado}) => {
  
-    if(!usuarioLogueado){
+    if(!usuarioLogueado || usuarioLogueado.role !== "admin") {
         return <Navigate to={"/login"}/>
     }
     return <Outlet></Outlet>

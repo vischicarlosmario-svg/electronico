@@ -28,15 +28,19 @@ const Login = ({ setUsuarioLogueado }) => {
     const esAdmin = data.email === import.meta.env.VITE_API_EMAIL && data.password === import.meta.env.VITE_API_PASSWORD;  
 
     if (usuarioValidado || esAdmin) {
+      const nombre = esAdmin ? "Administrador" : usuarioValidado.nombre;
+      const rol = esAdmin ? "admin" : "user";
+
       const infoUsuario = {
-        email: data.email,
-        role: esAdmin ? "admin" : "user"
+        nombre: nombre,
+        role: rol
       };
 
+
       setUsuarioLogueado(infoUsuario);
-      localStorage.setItem("usuarioKey", JSON.stringify(infoUsuario));
+      localStorage.setItem("usuariosKey", JSON.stringify(infoUsuario));
       Swal.fire({
-        title: "Bienvenido Administrador",
+        title: esAdmin ? "Bienvenido Administrador" : `hola, ${nombre}`,
         text: "Iniciaste sesion correctamente",
         icon: "success",
       });
