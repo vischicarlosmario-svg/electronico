@@ -218,6 +218,15 @@ thead {
   border-radius: 10px;
 }
 
+.btn-clear-all {
+  border: none;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  display: block;
+  width: 100%;
+}
+
 /* ================= ANIMACIONES ================= */
 
 @keyframes rgbMove {

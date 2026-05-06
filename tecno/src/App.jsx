@@ -27,20 +27,29 @@ function App() {
     return JSON.parse(localStorage.getItem("usuarios")) || [];
   });
 
+  //Producto para agregar al carrito
+  const [allProducto, setAllProducto] = useState([]);
+  //Total a pagar
+  const [Total, setTotal] = useState(0);
+  //Contador de productos
+  const [contadorProducto, setContadorProducto] = useState(0);
+
+
+
   return (
     <>
       <BrowserRouter>
         <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
         <main>
           <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/detalle/:id" element={<DetalleDeProducto/>}/>
-            <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
+            <Route path="/" element={<Home />} />
+            <Route path="/detalle/:id" element={<DetalleDeProducto />} />
+            <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
             <Route path="/registro" element={<Registro />} ></Route>
-            <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado}/>}>
-              <Route index element={<Administrador productos={productos} setProductos={setProductos} usuarios={usuarios} setUsuarios={setUsuarios}></Administrador>}/>
-              <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>
-              <Route path="editar/:id" element={<EditarProducto titulo="Editar Producto" productos={productos} setProductos={setProductos}></EditarProducto>}/>
+            <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado} />}>
+              <Route index element={<Administrador productos={productos} setProductos={setProductos} usuarios={usuarios} setUsuarios={setUsuarios}></Administrador>} />
+              <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>} />
+              <Route path="editar/:id" element={<EditarProducto titulo="Editar Producto" productos={productos} setProductos={setProductos}></EditarProducto>} />
             </Route>
             <Route path="*" element={<Error404></Error404>} />
           </Routes>
