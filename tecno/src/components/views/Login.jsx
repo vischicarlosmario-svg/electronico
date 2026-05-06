@@ -55,32 +55,6 @@ const Login = ({ setUsuarioLogueado }) => {
 
   }
 
-  // const onSubmit = (data) => {
-  //   if (
-  //     data.email === import.meta.env.VITE_API_EMAIL &&
-  //     data.password === import.meta.env.VITE_API_PASSWORD
-
-  //   ) {
-  //     setUsuarioLogueado(true);
-
-  //     localStorage.setItem("usuarioKey", JSON.stringify(true))
-  //     //redireccionar a la pagina del administrador
-  //     Swal.fire({
-  //       title: "Bienvenido Administrador",
-  //       text: "Iniciaste sesion correctamente",
-  //       icon: "success",
-  //     });
-  //     navegacion("/Administrador")
-  //   } else {
-  //     Swal.fire({
-  //       title: "Ocurrio un error",
-  //       text: "Credenciales incorrectas",
-  //       icon: "error",
-  //     });
-  //   }
-
-  // }
-
   return (
     <>
       <Card className="shadow p-3 mb-5 bg-body rounded card-login">
