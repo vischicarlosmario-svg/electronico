@@ -7,9 +7,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
   const logout = () => {
     setUsuarioLogueado(false);
-    localStorage.removeItem("usuarioKey");
     navegacion("/");
-    
   };
 
   return (

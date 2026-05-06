@@ -16,6 +16,7 @@ import Registro from "./components/views/Registro.jsx"
 
 function App() {
   const sesionUsuario = JSON.parse(localStorage.getItem("usuarioKey")) || false;
+  const productosGuardados = JSON.parse(localStorage.getItem('productoKey')) || [];
   const [usuarioLogueado, setUsuarioLogueado] = useState(sesionUsuario);
 
   const [productos, setProductos] = useState(() => {
@@ -27,6 +28,9 @@ function App() {
 
   console.log("estado de productos", productos.length)
   console.log("Estado del usuario", usuarioLogueado)
+  // useEffect(() => {
+  //   localStorage.setItem('productosKey', JSON.stringify(productos))
+  // }, [productos]);
 
   return (
     <>

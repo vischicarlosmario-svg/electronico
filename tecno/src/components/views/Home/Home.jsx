@@ -12,15 +12,13 @@ const Home = () => {
 
   return (
     <>
-      {/* 🎮 CARROUSEL */}
       <section className="section">
         <div className="container">
           <Carrousel />
         </div>
       </section>
 
-      {/* 🆕 NOVEDADES */}
-      <section className="section">
+    <section className="section">
         <h2 className="section-title">Novedades</h2>
         <div className="container">
           <div className="section-content">
@@ -29,20 +27,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 🎯 FILTRO */}
-      <section className="section">
-        <h2 className="section-title">Categorías</h2>
-        <div className="container">
-          <FiltroCategorias setCategoriaSeleccionada={setCategoriaSeleccionada} />
-        </div>
-      </section>
-
-      {/* 🔥 JUEGOS POPULARES */}
-      <section className="section">
+    <section className="section">
         <h2 className="section-title">Juegos Populares</h2>
         <div className="container">
           <div className="section-content">
-            <JuegosPopulares categoriaSeleccionada={categoriaSeleccionada} />
+            <JuegosPopulares />
           </div>
         </div>
       </section>
