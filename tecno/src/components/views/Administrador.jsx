@@ -1,7 +1,7 @@
 import { Button, Table } from "react-bootstrap"
 import { Link } from "react-router"
 import ItemProducto from "./Producto/ItemProducto"
-import borrarUsuario from "./Producto/ItemUsuario"
+import ItemUsuario from "./Producto/ItemUsuario"
 import Swal from "sweetalert2"
 import { useEffect } from "react"
 
@@ -53,8 +53,8 @@ const Administrador = ({ setProductos, productos, usuarios, setUsuarios }) => {
         <tbody>
           {usuarios.map((usuario, index) => (
             <ItemUsuario 
-              key={u.email} 
-              usuario={u} 
+              key={usuario.email} 
+              usuario={usuario} 
               fila={index + 1} 
               usuarios={usuarios}
               setUsuarios={setUsuarios}

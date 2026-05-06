@@ -23,8 +23,9 @@ function App() {
     return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
   });
 
-  console.log("estado de productos", productos.length)
-  console.log("Estado del usuario", usuarioLogueado)
+  const [usuarios, setUsuarios] = useState(() => {
+    return JSON.parse(localStorage.getItem("usuarios")) || [];
+  });
 
   return (
     <>
@@ -37,7 +38,7 @@ function App() {
             <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}/>}/>
             <Route path="/registro" element={<Registro />} ></Route>
             <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado}/>}>
-              <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>}/>
+              <Route index element={<Administrador productos={productos} setProductos={setProductos} usuarios={usuarios} setUsuarios={setUsuarios}></Administrador>}/>
               <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>}/>
               <Route path="editar/:id" element={<EditarProducto titulo="Editar Producto" productos={productos} setProductos={setProductos}></EditarProducto>}/>
             </Route>
