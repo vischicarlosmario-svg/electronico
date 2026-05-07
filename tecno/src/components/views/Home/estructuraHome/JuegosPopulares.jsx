@@ -21,7 +21,8 @@ const JuegosPopulares = ({
 }) => {
   const onAddProducto = juego => {
     if (allProducto.find(item => item.id === juego.id)) {
-      const producto = allProducto.map(item => item.id === juego.id ? {
+      const producto = allProducto.map(item => item.id === juego.id ?
+      {
         ...item, quantity: item.quantity + 1
       } : item);
       setContadorProducto(contadorProducto + juego.quantity)
@@ -48,7 +49,6 @@ return (
                 imagen={juego.imagen}
                 nombreProducto={juego.nombreProducto}
                 precio={juego.precio}
-
               />
               <Button className='m-2' onClick={() => onAddProducto(juego)}>Comprar</Button>
             </div>
