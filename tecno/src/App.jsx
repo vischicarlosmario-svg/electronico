@@ -19,8 +19,10 @@ function App() {
   const [usuarioLogueado, setUsuarioLogueado] = useState(sesionUsuario);
 
   const [productos, setProductos] = useState(() => {
-    const productosGuardados = localStorage.getItem('productosKey')
-    return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
+    const productosGuardados = localStorage.getItem("productosKey");
+    return productosGuardados
+      ? JSON.parse(productosGuardados)
+      : ProductosPrueba;
   });
 
   const [usuarios, setUsuarios] = useState(() => {
@@ -51,4 +53,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

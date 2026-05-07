@@ -1,12 +1,13 @@
-import { StrictMode, useEffect, useState } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from '../../../App.jsx'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Carrousel from "./Carrousel/Carrousel"
-import JuegosPopulares from './estructuraHome/JuegosPopulares.jsx'
-import Novedades from './estructuraHome/Novedades.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from "react";
+import Carrousel from "./Carrousel/Carrousel";
+import JuegosPopulares from './estructuraHome/JuegosPopulares.jsx';
+import Novedades from './estructuraHome/Novedades.jsx';
+import FiltroCategorias from "../FiltroCategorias";
 
 const Home = () => {
+
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("Todos");
 
   return (
     <>
@@ -16,7 +17,7 @@ const Home = () => {
         </div>
       </section>
 
-    <section className="section">
+      <section className="section">
         <h2 className="section-title">Novedades</h2>
         <div className="container">
           <div className="section-content">
@@ -25,15 +26,20 @@ const Home = () => {
         </div>
       </section>
 
-    <section className="section">
+      <section className="section">
         <h2 className="section-title">Juegos Populares</h2>
+
+        {/* 🔥 FILTRO */}
+        <FiltroCategorias setCategoriaSeleccionada={setCategoriaSeleccionada} />
+
         <div className="container">
           <div className="section-content">
-            <JuegosPopulares />
+            <JuegosPopulares categoriaSeleccionada={categoriaSeleccionada} />
           </div>
         </div>
       </section>
     </>
   );
-}
+};
+
 export default Home;
