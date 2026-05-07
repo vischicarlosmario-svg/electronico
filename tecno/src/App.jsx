@@ -10,7 +10,7 @@ import Error404 from "./components/views/Error404"
 import { useEffect, useState } from "react"
 import ProtectorAdmin from "./components/routes/ProtectorAdmin"
 import './App.css'
-import ProductosPrueba from "./data/productosPrueba.jsx"
+import ProductosPrueba from "./data/ProductosPrueba.jsx"
 import EditarProducto from "./components/views/Producto/EditarProducto.jsx"
 import Registro from "./components/views/Registro.jsx"
 
