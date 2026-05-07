@@ -1,10 +1,11 @@
 import { Button, Table } from "react-bootstrap"
 import { Link } from "react-router"
 import ItemProducto from "./Producto/ItemProducto"
+import ItemUsuario from "./Producto/ItemUsuario"
 import Swal from "sweetalert2"
 import { useEffect } from "react"
 
-const Administrador = ({ setProductos, productos }) => {
+const Administrador = ({ setProductos, productos, usuarios, setUsuarios }) => {
   console.log("productos recibidos", productos?.length)
 
   const cargarProductosPrueba = () => {
@@ -38,7 +39,33 @@ const Administrador = ({ setProductos, productos }) => {
           )}
         </tbody>
       </Table>
+      <h2 className="mt-5">Usuarios Registrados</h2>
+      <hr />
+      <Table striped bordered hover responsive>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th className="text-center">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {usuarios.map((usuario, index) => (
+            <ItemUsuario 
+              key={usuario.email} 
+              usuario={usuario} 
+              fila={index + 1} 
+              usuarios={usuarios}
+              setUsuarios={setUsuarios}
+            />
+          ))}
+        </tbody>
+      </Table>
     </section>
+    
+
+    
   )
 }
 
