@@ -76,7 +76,9 @@ const Registro = () => {
         </button>
 
       </form>
+      
     </div>
+
   );
 };
 
