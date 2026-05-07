@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 const Registro = () => {
-  console.log(Registro.length)
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -23,7 +22,6 @@ const Registro = () => {
 
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-    // evitar duplicados
     const existe = usuarios.find(u => u.email === form.email);
 
     if (existe) {

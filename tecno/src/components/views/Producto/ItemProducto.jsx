@@ -49,7 +49,3 @@ const ItemProducto = ({ itemProducto, setProductos, borrarProducto, fila, produc
 export default ItemProducto;
 
 
-
-// /* <td>${ItemProducto.descripcion_breve}</td>*/
-//     <td>${ItemProducto.descripcion_amplia}</td>
-//

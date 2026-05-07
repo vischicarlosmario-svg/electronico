@@ -8,11 +8,10 @@ import Novedades from './estructuraHome/Novedades.jsx'
 
 const Home = () => {
 
-  //Producto para agregar al carrito
   const [allProducto, setAllProducto] = useState([]);
-  //Total a pagar
+
   const [Total, setTotal] = useState(0);
-  //Contador de productos
+
   const [contadorProducto, setContadorProducto] = useState(0);
 
   return (

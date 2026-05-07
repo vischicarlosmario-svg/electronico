@@ -6,7 +6,6 @@ import Swal from "sweetalert2"
 import { useEffect } from "react"
 
 const Administrador = ({ setProductos, productos, usuarios, setUsuarios }) => {
-  console.log("productos recibidos", productos?.length)
 
   const cargarProductosPrueba = () => {
     setProductos(productosPrueba)

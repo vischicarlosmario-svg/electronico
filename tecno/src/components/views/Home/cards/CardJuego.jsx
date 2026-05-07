@@ -7,12 +7,11 @@ const CardJuego = ({id, nombreProducto, precio, imagen}) => {
   const navegar = useNavigate();
   const detalleProducto = () => {
     navegar(`/detalle/${id}`);
-    console.log("click detectado redirigiendo a detalleProducto");
     
   }
 
   return (
-    //modelo de card para usarse en los productos
+
     <>
     <div className="">
       <div onClick={detalleProducto} className="card" > 
