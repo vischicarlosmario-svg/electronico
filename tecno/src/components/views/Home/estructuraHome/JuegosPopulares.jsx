@@ -2,7 +2,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import CardJuego from '../cards/CardJuego.jsx'
 import ProductosPrueba from "../../../../data/ProductosPrueba.jsx"
 
-const JuegosPopulares = ({nombreProducto, precio, imagen}) => {
+const JuegosPopulares = ({ categoriaSeleccionada }) => {
+
+  const productosFiltrados =
+    categoriaSeleccionada === "Todos"
+      ? ProductosPrueba
+      : ProductosPrueba.filter((juego) =>
+          (juego.categoria || "")
+            .toLowerCase()
+            .includes(categoriaSeleccionada.toLowerCase())
+        );
+
   return (
     <>
       <div className="juegosPopulares container-fluid">
