@@ -29,23 +29,11 @@ const Home = () => {
       <section className="section">
         <h2 className="section-title">Juegos Populares</h2>
 
-        {/* 🔥 FILTRO */}
         <FiltroCategorias setCategoriaSeleccionada={setCategoriaSeleccionada} />
 
         <div className="container">
           <div className="section-content">
-<<<<<<< HEAD
-            <JuegosPopulares 
-              allProducto={allProducto}
-              setAllProducto={setAllProducto}
-              Total={Total}
-              setTotal={setTotal}
-              contadorProducto={contadorProducto}
-              setContadorProducto={setContadorProducto}
-            />
-=======
             <JuegosPopulares categoriaSeleccionada={categoriaSeleccionada} />
->>>>>>> 5fe29ef6d3d9340b08dae16f9a64a6d45aad9864
           </div>
         </div>
       </section>
