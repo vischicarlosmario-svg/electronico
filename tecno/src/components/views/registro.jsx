@@ -39,8 +39,8 @@ const Registro = () => {
   };
 
   return (
-    <div className="container text-white mt-5 text-center">
-      <h2>Registro</h2>
+    <div className="container text-white mt-3 text-center">
+      <h2>Registro.</h2>
 
       <form onSubmit={handleSubmit} className="mt-4">
 
@@ -72,7 +72,7 @@ const Registro = () => {
         />
 
         <button className="btn btn-success">
-          Registrarse
+          Registrarse.
         </button>
 
       </form>
