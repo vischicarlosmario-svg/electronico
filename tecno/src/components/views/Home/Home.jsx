@@ -8,12 +8,6 @@ import Novedades from './estructuraHome/Novedades.jsx'
 
 const Home = () => {
 
-  const [allProducto, setAllProducto] = useState([]);
-
-  const [Total, setTotal] = useState(0);
-
-  const [contadorProducto, setContadorProducto] = useState(0);
-
   return (
     <>
       <section className="section">
