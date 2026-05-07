@@ -1,12 +1,15 @@
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { Link, NavLink, useNavigate } from "react-router";
+import Login from "../views/Login";
 
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
 
   const logout = () => {
     setUsuarioLogueado(false);
+    localStorage.removeItem("usuarioKey");
     navegacion("/");
+    
   };
 
   return (
@@ -24,17 +27,23 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               HOME
             </NavLink>
 
-            {usuarioLogueado ? (
+            {usuarioLogueado && usuarioLogueado.role === "admin" && (
               <>
                 <NavLink to={"/administrador"} className="nav-link">
                   Administrador
                 </NavLink>
+                </>
+            )}
+            
 
-                <Button variant="dark" onClick={logout}>
+            {usuarioLogueado && (
+              <Button variant="dark" onClick={logout}>
                   Logout
                 </Button>
-              </>
-            ) : (
+              
+            )}
+           
+             {!usuarioLogueado && (
               <>
                 <NavLink to={"/login"} className="nav-link">
                   LOGIN
@@ -44,9 +53,10 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
                   REGISTRO
                 </NavLink>
               </>
-            )}
+              )}
           </Nav>
         </Navbar.Collapse>
+        
       </Container>
     </Navbar>
   );

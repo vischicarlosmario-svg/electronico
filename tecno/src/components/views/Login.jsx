@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useState } from "react"
+import Registro from "./Registro";
 
 const Login = ({ setUsuarioLogueado }) => {
 
@@ -20,21 +21,30 @@ const Login = ({ setUsuarioLogueado }) => {
   const navegacion = useNavigate()
 
   const onSubmit = (data) => {
-    if (
-      data.email === import.meta.env.VITE_API_EMAIL &&
-      data.password === import.meta.env.VITE_API_PASSWORD
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+    const usuarioValidado = usuarios.find(
+      (u) => u.email === data.email && u.password === data.password
+    );
+    const esAdmin = data.email === import.meta.env.VITE_API_EMAIL && data.password === import.meta.env.VITE_API_PASSWORD;  
 
-    ) {
-      setUsuarioLogueado(true);
+    if (usuarioValidado || esAdmin) {
+      const nombre = esAdmin ? "Administrador" : usuarioValidado.nombre;
+      const rol = esAdmin ? "admin" : "user";
 
-      localStorage.setItem("usuarioKey", JSON.stringify(true))
-      //redireccionar a la pagina del administrador
+      const infoUsuario = {
+        nombre: nombre,
+        role: rol
+      };
+
+
+      setUsuarioLogueado(infoUsuario);
+      localStorage.setItem("usuarioKey", JSON.stringify(infoUsuario));
       Swal.fire({
-        title: "Bienvenido Administrador",
+        title: esAdmin ? "Bienvenido Administrador" : `hola, ${nombre}`,
         text: "Iniciaste sesion correctamente",
         icon: "success",
       });
-      navegacion("/Administrador")
+      navegacion(esAdmin ? "/Administrador" : "/");
     } else {
       Swal.fire({
         title: "Ocurrio un error",

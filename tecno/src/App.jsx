@@ -12,22 +12,22 @@ import ProtectorAdmin from "./components/routes/ProtectorAdmin"
 import './App.css'
 import ProductosPrueba from "./data/productosPrueba.jsx"
 import EditarProducto from "./components/views/Producto/EditarProducto.jsx"
+import Registro from "./components/views/Registro.jsx"
 
 function App() {
   const sesionUsuario = JSON.parse(localStorage.getItem("usuarioKey")) || false;
-  const productosGuardados = JSON.parse(localStorage.getItem('productoKey')) || [];
   const [usuarioLogueado, setUsuarioLogueado] = useState(sesionUsuario);
 
   const [productos, setProductos] = useState(() => {
-    const productosGuardados = localStorage.getItem('productosKey')
-    return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
+    const productosGuardados = localStorage.getItem("productosKey");
+    return productosGuardados
+      ? JSON.parse(productosGuardados)
+      : ProductosPrueba;
   });
 
-  console.log("estado de productos", productos.length)
-  console.log("Estado del usuario", usuarioLogueado)
-  // useEffect(() => {
-  //   localStorage.setItem('productosKey', JSON.stringify(productos))
-  // }, [productos]);
+  const [usuarios, setUsuarios] = useState(() => {
+    return JSON.parse(localStorage.getItem("usuarios")) || [];
+  });
 
   return (
     <>
@@ -38,8 +38,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/detalle/:id" element={<DetalleDeProducto />} />
             <Route path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado} />} />
+            <Route path="/registro" element={<Registro />} ></Route>
             <Route path="/Administrador" element={<ProtectorAdmin usuarioLogueado={usuarioLogueado} />}>
-              <Route index element={<Administrador productos={productos} setProductos={setProductos}></Administrador>} />
+              <Route index element={<Administrador productos={productos} setProductos={setProductos} usuarios={usuarios} setUsuarios={setUsuarios}></Administrador>} />
               <Route path="crear" element={<FormularioProducto titulo="Crear Producto"></FormularioProducto>} />
               <Route path="editar/:id" element={<EditarProducto titulo="Editar Producto" productos={productos} setProductos={setProductos}></EditarProducto>} />
             </Route>
@@ -52,4 +53,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

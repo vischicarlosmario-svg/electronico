@@ -13,8 +13,10 @@ const ItemProducto = ({ itemProducto, setProductos, borrarProducto, fila, produc
       confirmButtonText: "Sí, eliminar"
     }).then((result) => {
       if (result.isConfirmed) {
-        const productosFiltrados = productos.filter((p) => p.id !== itemProducto.id);
-        setProductos(productosFiltrados);
+        const productosNuevos = productos.filter((p) => p.id !== itemProducto.id);
+        setProductos(productosNuevos);
+
+        localStorage.setItem("productosKey", JSON.stringify(productosNuevos))
 
         Swal.fire("Eliminado", "El producto ha sido borrado", "success");
       }
@@ -47,7 +49,3 @@ const ItemProducto = ({ itemProducto, setProductos, borrarProducto, fila, produc
 export default ItemProducto;
 
 
-
-// /* <td>${ItemProducto.descripcion_breve}</td>*/
-//     <td>${ItemProducto.descripcion_amplia}</td>
-//

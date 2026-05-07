@@ -1,12 +1,22 @@
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
   background: radial-gradient(circle at top, #111, #000);
   color: #FFFFFF;
   font-family: 'Audiowide', sans-serif;
 }
 
-/* 🔗 LINKS */
+
 a {
   text-decoration: none;
   color: #00BFFF;
@@ -16,7 +26,6 @@ a:hover {
   color: #00FF9C;
 }
 
-/* ================= NAVBAR ================= */
 
 .navbar {
   background: rgba(0, 0, 0, 0.9) !important;
@@ -43,16 +52,17 @@ a:hover {
   text-shadow: 0 0 5px #00FF9C;
 }
 
-/* ================= BOTONES ================= */
-
-.btn, button {
+.btn,
+button {
   background-color: #8A2BE2;
   border: none;
   color: white;
   transition: all 0.3s ease;
+  max-width: 100%;
 }
 
-.btn:hover, button:hover {
+.btn:hover,
+button:hover {
   background: linear-gradient(270deg, #8A2BE2, #00BFFF, #00FF9C);
   background-size: 600% 600%;
   animation: rgbMove 3s ease infinite;
@@ -60,11 +70,12 @@ a:hover {
   box-shadow: 0 0 15px #00FF9C;
 }
 
-/* ================= SECCIONES ================= */
 
 .section {
   margin: 60px 0;
-  padding: 0 20px;
+  padding: 0 15px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .section-title {
@@ -76,6 +87,7 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: 'Orbitron', sans-serif;
+  word-wrap: break-word;
 }
 
 .section-title::after {
@@ -97,15 +109,34 @@ a:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
 }
 
-/* ================= CARDS ================= */
+
+.filtro-categorias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
 
 .card {
   background: #111;
   border: 1px solid #8A2BE2;
   color: white;
   transition: 0.3s;
+  width: 100%;
+  max-width: 100%;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .card:hover {
@@ -115,12 +146,12 @@ a:hover {
     0 0 20px #00BFFF;
 }
 
-/* ================= INPUTS ================= */
 
 .form-control {
   background: #000;
   border: 1px solid #00BFFF;
   color: white;
+  width: 100%;
 }
 
 .form-control:focus {
@@ -130,24 +161,34 @@ a:hover {
   color: white;
 }
 
-/* ================= TEXTOS ================= */
 
 .text-danger {
   color: #FF3C38 !important;
 }
 
-/* ================= TABLAS ================= */
 
 table {
   background: #111;
   color: white;
+  width: 100%;
 }
 
 thead {
   background: linear-gradient(90deg, #8A2BE2, #00BFFF);
 }
 
-/* ================= CAROUSEL ================= */
+
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.carousel img {
+  object-fit: cover;
+}
 
 .carousel-indicators button {
   width: 12px;
@@ -166,7 +207,6 @@ thead {
   box-shadow: 0 0 10px #00FF9C;
 }
 
-/* ================= FOOTER ================= */
 
 .footer-gamer {
   margin-top: 50px;
@@ -174,6 +214,8 @@ thead {
   background: #000;
   border-top: 2px solid #8A2BE2;
   text-align: center;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .footer-title {
@@ -207,7 +249,6 @@ thead {
   text-shadow: 0 0 8px #00FF9C;
 }
 
-/* ================= SCROLL ================= */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -218,10 +259,68 @@ thead {
   border-radius: 10px;
 }
 
-/* ================= ANIMACIONES ================= */
+
+@media (max-width: 992px) {
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .section {
+    padding: 0 10px;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+  }
+
+  .btn,
+  button {
+    font-size: 0.9rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .carousel img {
+    max-height: 220px;
+  }
+
+  .btn,
+  button {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
 
 @keyframes rgbMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

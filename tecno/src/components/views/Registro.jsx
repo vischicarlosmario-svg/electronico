@@ -22,6 +22,7 @@ const Registro = () => {
 
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
+    // evitar duplicados
     const existe = usuarios.find(u => u.email === form.email);
 
     if (existe) {
@@ -76,9 +77,7 @@ const Registro = () => {
         </button>
 
       </form>
-
     </div>
-
   );
 };
 
