@@ -5,23 +5,24 @@ import ProductosPrueba from "../../../../data/ProductosPrueba.jsx"
 const JuegosPopulares = ({nombreProducto, precio, imagen}) => {
   return (
     <>
-    <div className="juegosPopulares container-fluid">
-        <div className="juegosTitulo ">
-            <div className="row justify-content-center">
-                {ProductosPrueba.slice(0,5).map((juego) => (
-                <div className="col-6 col-md-4 col-lg-2 mb-3"key={juego.id}>
-                  <CardJuego
-                    id={juego.id}
-                    imagen={juego.imagen}
-                    nombreProducto={juego.nombreProducto}
-                    precio={juego.precio}
-                    
-                  />
-                </div>
-               ))}
-            </div>
+      <div className="juegosPopulares container-fluid">
+        <div className="juegosTitulo">
+          <div className="row justify-content-center">
+
+            {productosFiltrados.slice(0, 5).map((juego) => (
+              <div className="col-6 col-md-4 col-lg-2 mb-3" key={juego.id}>
+                <CardJuego
+                  id={juego.id}
+                  imagen={juego.imagen}
+                  nombreProducto={juego.nombreProducto}
+                  precio={juego.precio}
+                />
+              </div>
+            ))}
+
+          </div>
         </div>
-    </div>
+      </div>
     </>
   )
 }

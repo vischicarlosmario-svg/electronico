@@ -6,7 +6,6 @@ body {
   font-family: 'Audiowide', sans-serif;
 }
 
-/* 🔗 LINKS */
 a {
   text-decoration: none;
   color: #00BFFF;
@@ -15,8 +14,6 @@ a {
 a:hover {
   color: #00FF9C;
 }
-
-/* ================= NAVBAR ================= */
 
 .navbar {
   background: rgba(0, 0, 0, 0.9) !important;
@@ -43,8 +40,6 @@ a:hover {
   text-shadow: 0 0 5px #00FF9C;
 }
 
-/* ================= BOTONES ================= */
-
 .btn, button {
   background-color: #8A2BE2;
   border: none;
@@ -59,8 +54,6 @@ a:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px #00FF9C;
 }
-
-/* ================= SECCIONES ================= */
 
 .section {
   margin: 60px 0;
@@ -98,9 +91,6 @@ a:hover {
   flex-wrap: wrap;
   gap: 20px;
 }
-
-/* ================= CARDS ================= */
-
 .card {
   background: #111;
   border: 1px solid #8A2BE2;
@@ -115,8 +105,6 @@ a:hover {
     0 0 20px #00BFFF;
 }
 
-/* ================= INPUTS ================= */
-
 .form-control {
   background: #000;
   border: 1px solid #00BFFF;
@@ -130,13 +118,10 @@ a:hover {
   color: white;
 }
 
-/* ================= TEXTOS ================= */
 
 .text-danger {
   color: #FF3C38 !important;
 }
-
-/* ================= TABLAS ================= */
 
 table {
   background: #111;
@@ -146,8 +131,6 @@ table {
 thead {
   background: linear-gradient(90deg, #8A2BE2, #00BFFF);
 }
-
-/* ================= CAROUSEL ================= */
 
 .carousel-indicators button {
   width: 12px;
@@ -165,8 +148,6 @@ thead {
   opacity: 1;
   box-shadow: 0 0 10px #00FF9C;
 }
-
-/* ================= FOOTER ================= */
 
 .footer-gamer {
   margin-top: 50px;
@@ -207,8 +188,6 @@ thead {
   text-shadow: 0 0 8px #00FF9C;
 }
 
-/* ================= SCROLL ================= */
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -227,7 +206,6 @@ thead {
   width: 100%;
 }
 
-/* ================= ANIMACIONES ================= */
 
 @keyframes rgbMove {
   0% { background-position: 0% 50%; }

@@ -19,19 +19,21 @@ function App() {
   const [usuarioLogueado, setUsuarioLogueado] = useState(sesionUsuario);
 
   const [productos, setProductos] = useState(() => {
-    const productosGuardados = localStorage.getItem('productosKey')
-    return productosGuardados ? JSON.parse(productosGuardados) : ProductosPrueba
+    const productosGuardados = localStorage.getItem("productosKey");
+    return productosGuardados
+      ? JSON.parse(productosGuardados)
+      : ProductosPrueba;
   });
 
   const [usuarios, setUsuarios] = useState(() => {
     return JSON.parse(localStorage.getItem("usuarios")) || [];
   });
 
-  //Producto para agregar al carrito
+
   const [allProducto, setAllProducto] = useState([]);
-  //Total a pagar
+
   const [Total, setTotal] = useState(0);
-  //Contador de productos
+
   const [contadorProducto, setContadorProducto] = useState(0);
 
 
@@ -60,4 +62,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
